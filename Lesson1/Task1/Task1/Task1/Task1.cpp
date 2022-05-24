@@ -8,25 +8,50 @@ int main() {
 
 	//Читаем
 	in >> size1;
-	std::cout << size1 << std::endl;
-	int* arr = new int[size1 + 1]();
-	for (int i = 0; i < size1; ++i) {
-		in >> arr[i];
+	int* arr = 0;
+	if (size1 > 0) {
+		arr = new int[size1]();
+		int count = 0;
+		for (int i = 0; i < size1; ++i) {
+			in >> arr[i];
+			++count;
+		}
+		if (count != size1) {
+			std::cout << "Количество чисел превышает размер массива - arr[]." << std::endl;
+			delete[] arr;
+			return 1;
+		}
+	}
+	else {
+		std::cout << "Размер массива не должен быть равен нулю. Измените файл входных данных - " << std::endl;
 	}
 
+
 	in >> size2;
-	std::cout << size2 << std::endl;
-	int* arr2 = new int[size2 + 1]();
-	for (int i = 0; i < size2; ++i) {
-		in >> arr2[i];
+	int* arr2 = 0;
+	if (size2 > 0) {
+		arr2 = new int[size2]();
+		int count = 0;
+		for (int i = 0; i < size2; ++i) {
+			++count;
+			in >> arr2[i];
+		}
+		if (count != size2) {
+			std::cout << "Количество чисел превышает размер массива - arr2[]." << std::endl;
+			delete[] arr2;
+			return 1;
+		}
 	}
+	else {
+		std::cout << "Размер массива не должен быть равен нулю. Измените файл входных данных - " << std::endl;
+	}
+
 
 	in.close();
 
 	//Записываем
 	std::ofstream fout("out.txt");
 	fout << size2 << std::endl;
-	std::cout << size2 << std::endl;
 	for (int i = size2 - 1; i >= 0; --i) {
 		fout << arr2[i] << " ";
 	}
@@ -34,13 +59,14 @@ int main() {
 	std::cout << std::endl;
 
 	fout << size1 << std::endl;
-	std::cout << size1 << std::endl;
 	for (int i = size1 - 1; i >= 0; --i) {
 		fout << arr[i] << " ";
 	}
 	std::cout << std::endl;
 
 	fout.close();
+
+	std::cout << "Запись файла прошла успешно!" << std::endl;
 
 	delete[] arr;
 	delete[] arr2;
