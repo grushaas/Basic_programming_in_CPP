@@ -58,7 +58,9 @@ int main() {
 	fout << size2 << std::endl;
 
 	//Второй массив
-	value = arr2[5];
+	for (int i = 5; i < size2; ++i) {
+		value = arr2[i];
+	}
 	fout << value << " ";
 	for (int i = 0; i < size2 - 1; ++i) {
 		value = arr2[i];
