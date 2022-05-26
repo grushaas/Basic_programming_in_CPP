@@ -2,11 +2,15 @@
 #include <fstream>
 
 int main() {
+	setlocale(LC_ALL, "Russian");
+
 	std::ifstream in ("in.txt");
 	int size1 = 0;
 	int size2 = 0;
+	int value = 0;
 
 	//Читаем
+	//Первый массив
 	in >> size1;
 	int* arr = 0;
 	if (size1 > 0) {
@@ -16,17 +20,17 @@ int main() {
 			in >> arr[i];
 			++count;
 		}
-		if (count != size1) {
+		/*if (count != size1) {
 			std::cout << "Количество чисел превышает размер массива - arr[]." << std::endl;
 			delete[] arr;
 			return 1;
-		}
+		}*/
 	}
 	else {
 		std::cout << "Размер массива не должен быть равен нулю. Измените файл входных данных - " << std::endl;
 	}
 
-
+	//Второй массив
 	in >> size2;
 	int* arr2 = 0;
 	if (size2 > 0) {
@@ -36,11 +40,11 @@ int main() {
 			++count;
 			in >> arr2[i];
 		}
-		if (count != size2) {
+		/*if (count != size2) {
 			std::cout << "Количество чисел превышает размер массива - arr2[]." << std::endl;
 			delete[] arr2;
 			return 1;
-		}
+		}*/
 	}
 	else {
 		std::cout << "Размер массива не должен быть равен нулю. Измените файл входных данных - " << std::endl;
@@ -52,17 +56,25 @@ int main() {
 	//Записываем
 	std::ofstream fout("out.txt");
 	fout << size2 << std::endl;
-	for (int i = size2 - 1; i >= 0; --i) {
-		fout << arr2[i] << " ";
+
+	//Второй массив
+	value = arr2[5];
+	fout << value << " ";
+	for (int i = 0; i < size2 - 1; ++i) {
+		value = arr2[i];
+		fout << value << " ";
 	}
 	fout << std::endl;
-	std::cout << std::endl;
 
 	fout << size1 << std::endl;
-	for (int i = size1 - 1; i >= 0; --i) {
-		fout << arr[i] << " ";
+	
+	//Первый массив
+	for (int i = 1; i < size1; ++i) {
+		value = arr[i];
+		fout << value << " ";
 	}
-	std::cout << std::endl;
+	value = arr[0];
+	fout << value << std::endl;
 
 	fout.close();
 
