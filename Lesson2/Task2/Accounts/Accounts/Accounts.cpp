@@ -24,7 +24,7 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-
+	
 	int numAc = 0;
 	std::string name;
 	double bank = 0;
@@ -32,10 +32,15 @@ int main() {
 	//Данные счета
 	std::cout << "Введите номер счета: ";
 	std::cin >> numAc;
+	while (numAc < 0) {
+		std::cout << "Номер счета отрицательное, измените свой счет: ";
+		std::cin >> numAc;
+	}
 	std::cout << "Введите имя владельца: ";
 	std::cin >> name;
 	std::cout << "Введите баланс: ";
 	std::cin >> bank;
+	//Я думаю, баланс может быть отрицательным
 	
 	//Заполнение структуры
 	Account p;
