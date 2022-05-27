@@ -30,6 +30,9 @@ int main() {
         if (value > 12) {
             std::cout << "Неправильный номер!" << std::endl;
         }
+        else if (value < 0) {
+            std::cout << "Неправильный номер!" << std::endl;
+        }
 
         switch (static_cast<int>(season)) {
         case 1:
