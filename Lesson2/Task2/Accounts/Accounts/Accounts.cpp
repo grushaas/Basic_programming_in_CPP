@@ -44,10 +44,9 @@ int main() {
 	
 	//Заполнение структуры
 	Account p;
-	Account* p_p = &p;
-	p_p->NumberAccount = numAc;
-	p_p->name = name;
-	p_p->bank = bank;
+	p.NumberAccount = numAc;
+	p.name = name;
+	p.bank = bank;
 
 	accountUpdate(p);
 
