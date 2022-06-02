@@ -1,10 +1,11 @@
 ﻿#include <iostream>
 
 class Calculator {
-public:
+private:
 	double num1;
 	double num2;
 
+public:
 	double add() {
 		double result = num1 + num2;
 
@@ -35,18 +36,18 @@ public:
 
 		return result;
 	}
-	bool set_num1(double num1) {
+	bool set_num1(double number1) {
 		if (num1 != 0) {
-			this->num1 = num1;
+			num1 = number1;
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
-	bool set_num2(double num2) {
+	bool set_num2(double number2) {
 		if (num2 != 0) {
-			this->num2 = num2;
+			num2 = number2;
 			return true;
 		}
 		else {
@@ -62,7 +63,36 @@ int main() {
 	double num1;
 	double num2;
 
-	std::cout << "Введите num1: ";
+	do {
+		std::cout << "Введите num1: " << ;
+		std::cin >> num1;
+		if (calc.set_num1(num1) == false) {
+			std::cout << "Неверный ввод!" << std::endl;
+			std::cout << "Введите num1: ";
+			std::cin >> num1;
+
+			calc.set_num1(num1);
+		}
+		else {
+			calc.set_num1(num1);
+		}
+
+
+	} while (true);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*std::cout << "Введите num1: ";
 	std::cin >> num1;
 	while (calc.set_num1(num1) == false) {
 		std::cout << "Неверный ввод!" << std::endl;
@@ -81,7 +111,7 @@ int main() {
 		std::cin >> num2;
 
 		calc.set_num2(num2);
-	}
+	}*/
 
 	while (true) {
 		//Сложение
