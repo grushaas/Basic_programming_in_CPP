@@ -37,7 +37,7 @@ public:
 		return result;
 	}
 	bool set_num1(double number1) {
-		if (num1 != 0) {
+		if (number1 != 0) {
 			num1 = number1;
 			return true;
 		}
@@ -46,7 +46,7 @@ public:
 		}
 	}
 	bool set_num2(double number2) {
-		if (num2 != 0) {
+		if (number2 != 0) {
 			num2 = number2;
 			return true;
 		}
@@ -63,28 +63,27 @@ int main() {
 	double num1;
 	double num2;
 
-	std::cout << "Введите num1: ";
-	std::cin >> num1;
-	if(calc.set_num1(num1) != true) {
-		do {
+	do {
+		std::cout << "Введите num1: ";
+		std::cin >> num1;
+		if(calc.set_num1(num1)) {
+			break;
+		}
+		else {
 			std::cout << "Неверный ввод!" << std::endl;
-			std::cout << "Введите num1: ";
-			std::cin >> num1;
-			calc.set_num1(num1);
-		} while(calc.set_num1(num1) != true);
-	}
-	if(calc.set_num1(num1)) {
+		}
+	} while(true);
+
+	do {
 		std::cout << "Введите num2: ";
 		std::cin >> num2;
-		if(calc.set_num2(num2) != true) {
-			do {
-				std::cout << "Неверный ввод!" << std::endl;
-				std::cout << "Введите num2: ";
-				std::cin >> num2;
-				calc.set_num2(num2);
-			} while(calc.set_num2(num2) != true);
+		if(calc.set_num2(num2)) {
+			break;
 		}
-	}
+		else {
+			std::cout << "Неверный ввод!" << std::endl;
+		}
+	} while(true);
 
 	while (true) {
 		//Сложение
@@ -106,28 +105,28 @@ int main() {
 		std::cout << "num2 / num1 = " << calc.divide_2_1() << std::endl;
 
 		//Смена числа - num1 и num2
-		std::cout << "Введите num1: ";
-		std::cin >> num1;
-		if(calc.set_num1(num1) != true) {
-			do {
+		
+		do {
+			std::cout << "Введите num1: ";
+			std::cin >> num1;
+			if(calc.set_num1(num1)) {
+				break;
+			}
+			else {
 				std::cout << "Неверный ввод!" << std::endl;
-				std::cout << "Введите num1: ";
-				std::cin >> num1;
-				calc.set_num1(num1);
-			} while(calc.set_num1(num1) != true);
-		}
-		if(calc.set_num1(num1)) {
+			}
+		} while (true);
+
+		do {
 			std::cout << "Введите num2: ";
 			std::cin >> num2;
-			if(calc.set_num2(num2) != true) {
-				do {
-					std::cout << "Неверный ввод!" << std::endl;
-					std::cout << "Введите num2: ";
-					std::cin >> num2;
-					calc.set_num2(num2);
-				} while(calc.set_num2(num2) != true);
+			if(calc.set_num2(num2)) {
+				break;
 			}
-		}
+			else {
+				std::cout << "Неверный ввод!" << std::endl;
+			}
+		} while (true);
 	}
 
 	return 0;
