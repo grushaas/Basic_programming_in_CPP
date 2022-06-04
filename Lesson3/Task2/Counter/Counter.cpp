@@ -16,7 +16,7 @@ private:
 public:
 
 	Counter(int number = 1) : number(number) {
-		this->number = number;
+		
 	}
 	
 	void increment() {
@@ -40,6 +40,7 @@ int main() {
 
 	int number;
 	std::string answer;
+	bool answerBool;
 	char symbol = 's';
 	Command comm;
 
@@ -50,11 +51,13 @@ int main() {
 		if (answer == "да") {
 			std::cout << "Введите начальное значение счетчика: ";
 			std::cin >> number;
+			answerBool = true;
 			break;
 		}
 		else if (answer == "нет") {
 			std::cout << "Начальное значение счетчика будет выставленно по умолчанию\nЗначение счетчика = 1" << std::endl;
 			number = 1;
+			answerBool = false;
 			break;
 		}
 		else {
@@ -63,41 +66,69 @@ int main() {
 		}
 	}
 
-	Counter count = number ? Counter(number) : Counter();
+	Counter count = answerBool ? Counter(number) : Counter();
 
 	while (comm != Command::exit) {
 		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
 		std::cin >> symbol;
 
 		if(symbol == '+') {
-			comm = Command::increase;
+			comm == Command::increase;
 		}
-		else if(symbol == '-') {
-			comm = Command::decrease;
+		else if(symbol = '-') {
+			comm == Command::decrease;
 		}
 		else if(symbol == '=') {
-			comm = Command::meaning;
+			comm == Command::meaning;
 		}
 		else if(symbol == 'x') {
-			comm = Command::exit;
-		}
-		
-
-		if (comm == Command::increase) {
-			count.increment();
-		}
-		else if (comm == Command::decrease) {
-			count.decrement();
-		}
-		else if (comm == Command::meaning) {
-			std::cout << count.presentValue() << std::endl;
-		}
-		else if (comm == Command::exit) {
-			continue;
+			comm == Command::exit;
 		}
 		else {
-			std::cout << "Такой команды нет!" << std::endl;
+			std::cout << "Такой команды не существует" << std::endl;
 		}
+
+		
+		switch (static_cast<Command>(comm)) {
+			case Command::increase:
+				count.increment();
+				break;
+
+			case Command::decrease:
+				count.decrement();
+				break;
+			
+			case Command::meaning:
+				count.presentValue();
+				break;
+
+			case Command::exit:
+				break;
+
+			default:
+				std::cout << "Такой команды не существует" << std::endl;
+				break;
+		}
+		
+		
+		
+		
+		
+		// if (comm == Command::increase) {
+		// 	count.increment();
+		// }
+		// else if (comm == Command::decrease) {
+		// 	count.decrement();
+		// }
+		// else if (comm == Command::meaning) {
+		// 	std::cout << count.presentValue() << std::endl;
+		// }
+		// else if (comm == Command::exit) {
+		// 	continue;
+		// }
+		// else {
+		// 	std::cout << "Такой команды нет!" << std::endl;
+		// }
 	}
 	
 	std::cout << "До свидания!" << std::endl;
