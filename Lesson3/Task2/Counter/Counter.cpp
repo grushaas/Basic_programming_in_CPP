@@ -34,9 +34,6 @@ public:
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-
 
 	int number;
 	std::string answer;
@@ -72,24 +69,7 @@ int main() {
 		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
 		std::cin >> symbol;
 
-		if(symbol == '+') {
-			comm == Command::increase;
-		}
-		else if(symbol = '-') {
-			comm == Command::decrease;
-		}
-		else if(symbol == '=') {
-			comm == Command::meaning;
-		}
-		else if(symbol == 'x') {
-			comm == Command::exit;
-		}
-		else {
-			std::cout << "Такой команды не существует" << std::endl;
-		}
-
-		
-		switch (static_cast<Command>(comm)) {
+		switch (static_cast<Command>(symbol)) {
 			case Command::increase:
 				count.increment();
 				break;
@@ -109,26 +89,6 @@ int main() {
 				std::cout << "Такой команды не существует" << std::endl;
 				break;
 		}
-		
-		
-		
-		
-		
-		// if (comm == Command::increase) {
-		// 	count.increment();
-		// }
-		// else if (comm == Command::decrease) {
-		// 	count.decrement();
-		// }
-		// else if (comm == Command::meaning) {
-		// 	std::cout << count.presentValue() << std::endl;
-		// }
-		// else if (comm == Command::exit) {
-		// 	continue;
-		// }
-		// else {
-		// 	std::cout << "Такой команды нет!" << std::endl;
-		// }
 	}
 	
 	std::cout << "До свидания!" << std::endl;
