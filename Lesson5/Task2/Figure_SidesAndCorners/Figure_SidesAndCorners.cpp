@@ -1,7 +1,13 @@
 #include <iostream>
 #include <string>
 
-class Triangle {
+class Figure {
+protected:
+    std::string name = "";
+
+};
+
+class Triangle : public Figure {
 protected:
     int a;
     int b;
@@ -10,94 +16,73 @@ protected:
     int A;
     int B;
     int C;
-
-    std::string name = "";
-
 public:
-    Triangle(int a, int b, int c, int A, int B, int C) {
+    Triangle(int a, int b, int c, int A, int B, int C, std::string name) : Figure() {
         this->a = a;
         this->b = b;
         this->c = c;
+
         this->A = A;
         this->B = B;
         this->C = C;
 
-        name = "Треугольник";
-    }
-    Triangle() {
-
+        this->name = name;
     }
 
     virtual void getInfoTrian() {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
     }
 };
 
 class RightTriangle : public Triangle {
 public:
-    RightTriangle(int a, int b, int c, int A, int B) : Triangle(){
-        C = 90;
-
-        this->a = a;
-        this->b = b;
-        this->c = c;
-        this->A = A;
-        this->B = B;
-
-        name = "Прямоугольный треугольник";
+    RightTriangle(int a, int b, int c, int A, int B, std::string name) : Triangle(a, b, c, A, B, 90, name) {
+        this->name = name;
     }
 
     void getInfoTrian() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
     }
 };
 
 class IsoscelesTriangle : public Triangle {
 public:
-    IsoscelesTriangle(int b, int c, int C, int B) : Triangle() {
-        this->b = b;
-        this->c = c;
-        a = c;
-
-        this->C = C;
-        this->B = B;
-        A = C;
-
-        name = "Равнобедренный треугольник";
+    IsoscelesTriangle(int a, int b, int A, int B, std::string name) : Triangle(a, b, c, A, B, C, name) {
+        c = a;
+        C = A;
+        this->name = name;
     }
 
     void getInfoTrian() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
     }
 };
 
-class EquilateralTriangle : public Triangle {
+class EqualTriangle : public Triangle {
 public:
-    EquilateralTriangle(int b) : Triangle() {
-        this->b = b;
-        a = b;
-        c = b;
-        A = 60;
-        B = 60;
-        C = 60;
+    EqualTriangle(int a, std::string name) : Triangle(a, b, c, 90, 90, 90, name) {
+        this->a = a;
+        b = a;
+        c = a;
 
-        name = "Равносторонний треугольник";
+        this->name = name;
     }
 
     void getInfoTrian() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
     }
 };
 
-class Quadrilateral {
+
+class Quadrilateral : public Figure {
 protected:
     int a;
     int b;
@@ -109,10 +94,8 @@ protected:
     int C;
     int D;
 
-    std::string name = "";
-
 public:
-    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D) {
+    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D, std::string name) {
         this->a = a;
         this->b = b;
         this->c = c;
@@ -123,166 +106,133 @@ public:
         this->C = C;
         this->D = D;
 
-        name = "Четырехугольник";
-    }
-    Quadrilateral() {
-
+        this->name = name;
     }
 
-    virtual void getInfo() {
+    virtual void getInfoQuad() {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
     }
 };
 
 class Parallelogram : public Quadrilateral {
 public:
-    Parallelogram(int a, int d, int A, int D) {
-        this->a = a;
-        this->d = d;
+    Parallelogram(int a, int b, int A, int B, std::string name) : Quadrilateral(a, b, c, d, A, B, C, D, name) {
         c = a;
-        b = d;
-        
-        this->A = A;
-        this->D = D;
+        d = b;
+
         C = A;
-        B = D;
+        D = B;
 
-        name = "Параллелограмм";
-    }
-    Parallelogram() {
-
+        this->name = name;
     }
 
-    virtual void getInfo() override {
+    void getInfoQuad() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
     }
 };
 
 class Rectangle : public Parallelogram {
 public:
-    Rectangle(int a, int d) {
-        this->a = a;
-        this->d = d;
+    Rectangle(int a, int b, std::string name) : Parallelogram(a, b, 90, 90, name) {
         c = a;
-        b = d;
+        d = b;
 
-        A = 90;
-        B = 90;
-        C = 90;
-        D = 90;
-
-        name = "Прямоугольник";
+        this->name = name;
     }
 
-    void getInfo() override {
+    void getInfoQuad() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
     }
 };
 
 class Rhombus : public Parallelogram {
 public:
-    Rhombus(int a, int A, int D) {
-        this->a = a;
+    Rhombus(int a, int A, int B, std::string name) : Parallelogram(a, b, A, B, name) {
         b = a;
         c = a;
         d = a;
 
-        this->A = A;
-        this->D = D;
         C = A;
-        B = D;
+        D = B;
 
-        name = "Ромб";
-    }
-    Rhombus() {
-
+        this->name = name;
     }
 
-    virtual void getInfo() override {
+    void getInfoQuad() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
     }
 };
 
 class Square : public Rhombus {
 public:
-    Square(int a) {
-        this->a = a;
+    Square(int a, std::string name) : Rhombus(a, 90, 90, name) {
         b = a;
         c = a;
         d = a;
 
-        A = 90;
-        B = 90;
-        C = 90;
-        D = 90;
-
-        name = "Квадрат";
+        this->name = name;
     }
 
-    void getInfo() override {
+    void getInfoQuad() override {
         std::cout << name << ":" << std::endl;
-        std::cout << "Стороны: a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
+        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
+        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
     }
 };
+
+void getInfoTrian(Triangle* trian) {
+    trian->getInfoTrian();
+}
+
+void getInfoQuad(Quadrilateral* quad) {
+    quad->getInfoQuad();
+}
 
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    Triangle trian(10, 20, 30, 50, 60, 70);
+    Figure figure;
+    Triangle trian(10, 20, 30, 50, 60, 70, "Треугольник");
+    RightTriangle rightTrian(10, 20, 30, 50, 60, "Прямоугольный треугольник");
+    IsoscelesTriangle isoscelesTrian(10, 20, 50, 60, "Равнобедренный треугольник");
+    EqualTriangle qualTrian(30, "Равносторонний треугольник");
+
+    Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80, "Четырехугольник");
+    Parallelogram paral(20, 30, 30, 40, "Параллелограмм");
+    Rectangle rect(10, 20, "Прямоугольник");
+    Rhombus rhombus(30, 30, 40, "Ромб");
+    Square square(20, "Квадрат");
+
+    //Треугольники
     trian.getInfoTrian();
-
-    RightTriangle rightTrian(10, 20, 30, 50, 60);
-    IsoscelesTriangle isoscelesTrian(20, 10, 50, 60);
-    EquilateralTriangle equilateralTrian(30);
-
-    Triangle* par_rightTrian = &rightTrian;
-    Triangle* par_isoscelesTrian = &isoscelesTrian;
-    Triangle* par_equilateralTrian = &equilateralTrian;
+    std::cout << std::endl;
+    getInfoTrian(&rightTrian);
+    std::cout << std::endl;
+    getInfoTrian(&isoscelesTrian);
+    std::cout << std::endl;
+    getInfoTrian(&qualTrian);
 
     std::cout << std::endl;
-    par_rightTrian->getInfoTrian();
 
+    //Четырехугольники
+    quad.getInfoQuad();
     std::cout << std::endl;
-    par_isoscelesTrian->getInfoTrian();
-
+    getInfoQuad(&paral);
     std::cout << std::endl;
-    par_equilateralTrian->getInfoTrian();
-
-    Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80);
-    
+    getInfoQuad(&rect);
     std::cout << std::endl;
-    quad.getInfo();
-
-    Rectangle rect(10, 20);
-    Parallelogram parall(20, 30, 30, 40);
-    Rhombus rhombus(30, 30, 40);
-    Square square(20);
-
-    Quadrilateral* par_parall = &parall;
-    Parallelogram* par_rect = &rect;
-    Parallelogram* par_rhombus = &rhombus;
-    Rhombus* par_square = &square;
-
+    getInfoQuad(&rhombus);
     std::cout << std::endl;
-    par_rect->getInfo();
+    getInfoQuad(&square);
 
-    std::cout << std::endl;
-    par_square->getInfo();
-
-    std::cout << std::endl;
-    par_parall->getInfo();
-
-    std::cout << std::endl;
-    par_rhombus->getInfo();
 
     return 0;
 }
