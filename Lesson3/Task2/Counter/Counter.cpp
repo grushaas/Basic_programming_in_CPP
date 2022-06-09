@@ -65,7 +65,7 @@ int main() {
 
 	Counter count = answerBool ? Counter(number) : Counter();
 
-	while (comm != Command::exit) {
+	while (symbol != 'x') {
 		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
 		std::cin >> symbol;
 
@@ -90,6 +90,7 @@ int main() {
 				break;
 		}
 	}
+	count.presentValue();
 	
 	std::cout << "До свидания!" << std::endl;
 
