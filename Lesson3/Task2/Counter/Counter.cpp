@@ -65,11 +65,16 @@ int main() {
 
 	Counter count = answerBool ? Counter(number) : Counter();
 
-	while (symbol != 'x') {
+	while (true) {
 		std::cout << "Введите команду ('+', '-', '=' или 'x'): ";
 		std::cin >> symbol;
 
-		switch (static_cast<Command>(symbol)) {
+		Command comm = static_cast<Command>(symbol);
+		if(comm == Command::exit) {
+			break;
+		}
+
+		switch (comm) {
 			case Command::increase:
 				count.increment();
 				break;
@@ -79,10 +84,7 @@ int main() {
 				break;
 			
 			case Command::meaning:
-				count.presentValue();
-				break;
-
-			case Command::exit:
+				std::cout << count.presentValue() << std::endl;
 				break;
 
 			default:
