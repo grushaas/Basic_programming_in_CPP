@@ -41,24 +41,24 @@ int main() {
 	char symbol = 's';
 	Command comm;
 
-	std::cout << "Вы хотите указать начальное значение счетчика? Введите да или нет: ";
+	std::cout << "Вы хотите указать начальное значение счетчика? Введите yes или no: ";
 	std::cin >> answer;
 
 	while (true) {
-		if (answer == "да") {
+		if (answer == "yes") {
 			std::cout << "Введите начальное значение счетчика: ";
 			std::cin >> number;
 			answerBool = true;
 			break;
 		}
-		else if (answer == "нет") {
+		else if (answer == "no") {
 			std::cout << "Начальное значение счетчика будет выставленно по умолчанию\nЗначение счетчика = 1" << std::endl;
 			number = 1;
 			answerBool = false;
 			break;
 		}
 		else {
-			std::cout << "Введите пожалуйста либо да, либо нет: ";
+			std::cout << "Введите пожалуйста либо yes, либо no: ";
 			std::cin >> answer;
 		}
 	}
@@ -92,7 +92,7 @@ int main() {
 				break;
 		}
 	}
-	count.presentValue();
+	std::cout << count.presentValue() << std::endl;
 	
 	std::cout << "До свидания!" << std::endl;
 
