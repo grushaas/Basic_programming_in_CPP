@@ -2,382 +2,550 @@
 #include <string>
 
 class Figure {
-protected:
-    std::string name = "";
-    int sidesCount = 0;
-
-    virtual bool check() {
-        if(sidesCount == 0) {
-            return true;
-        }
-        return false;
-    }
 public:
-    Figure(std::string name) {
-        this->name = name;
-    }
+	virtual void print() {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+	}
 
-    virtual void printInfo() {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-    }
+	Figure(std::string name, int sides) {
+		this->name = name;
+		this->sides = sides;
+	}
+
+protected:
+
+	virtual void print_sides() {
+
+	}
+
+	virtual void print_angles() {
+
+	}
+		
+	virtual bool check() {
+		if (sides == 0) {
+			return true;
+		}
+		return false;
+	}
+
+	std::string name;
+	int sides = 0;
 };
 
 class Triangle : public Figure {
-protected:
-    int a;
-    int b;
-    int c;
-
-    int A;
-    int B;
-    int C;
-
-    bool check() override {
-        if(sidesCount == 3 && A + B + C == 180) {
-            return true;
-        }
-        return false;
-    }
-
 public:
-    Triangle(int a, int b, int c, int A, int B, int C, std::string name, int sidesCount) : Figure(name) {
-        this->a = a;
-        this->b = b;
-        this->c = c;
+	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, int sides) : Figure("Triangle", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		this->sideC = sideC;
 
-        this->A = A;
-        this->B = B;
-        this->C = C;
+		this->angleA = angleA;
+		this->angleB = angleB;
+		this->angleC = angleC;
 
-        this->name = name;
-        this->sidesCount = sidesCount;
-    }
+		this->sides = sides;
+	}
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
-    }
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		int answer = 0;
+		answer = angleA + angleB + angleC;
+		if (sides == 3 && answer == 180) {
+			return true;
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
+	}
+
+private:
+	int sideA, sideB, sideC;
+	int angleA, angleB, angleC;
 };
 
-class RightTriangle : public Triangle {
-protected:
-    bool check() override {
-        if(C == 90) {
-            return true;
-        }
-        return false;
-    }
-
+class Right : public Figure {
 public:
-    RightTriangle(int a, int b, int c, int A, int B, std::string name, int sidesCount) : Triangle(a, b, c, A, B, 90, name, sidesCount) {
-        this->name = name;
-    }
+	Right(int sideA, int sideB, int sideC, int angleA, int angleB, int sides) : Figure("Right Triangle", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		this->sideC = sideC;
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
-    }
+		this->angleA = angleA;
+		this->angleB = angleB;
+		angleC = 90;
+
+		this->sides = sides;
+	}
+
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (angleC == 90) {
+			return true;
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
+	}
+
+private:
+	int sideA, sideB, sideC;
+	int angleA, angleB, angleC;
+
 };
 
-class IsoscelesTriangle : public Triangle {
-protected:
-    bool check() override {
-        if(a == c && A == C) {
-            return true;
-        }
-        return false;
-    }
-
+class Isosceles : public Figure {
 public:
-    IsoscelesTriangle(int a, int b, int A, int B, std::string name, int sidesCount) : Triangle(a, b, c, A, B, C, name, sidesCount) {
-        c = a;
-        C = A;
-        this->name = name;
-    }
+	Isosceles(int sideA, int sideB, int angleA, int angleB, int sides) : Figure("Isosceles Triangle", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		sideC = sideA;
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
-    }
+		this->angleA = angleA;
+		this->angleB = angleB;
+		angleC = angleA;
+
+		this->sides = sides;
+	}
+
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideC && angleA == angleC) {
+			return true;
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
+	}
+
+private:
+	int sideA, sideB, sideC;
+	int angleA, angleB, angleC;
 };
 
-class EqualTriangle : public Triangle {
-protected:
-    bool check() override {
-        if(a == b && b == c && a == c && A == 60 && B == 60 && C == 60) {
-            return true;
-        }
-        return false;
-    }
-
+class Equilateral : public Figure {
 public:
-    EqualTriangle(int a, std::string name, int sidesCount) : Triangle(a, b, c, 60, 60, 60, name, sidesCount) {
-        this->a = a;
-        b = a;
-        c = a;
+	Equilateral(int sideA, int sides) : Figure("Equilateral Triangle", 0) {
+		this->sideA = sideA;
+		sideB = sideA;
+		sideC = sideA;
 
-        this->name = name;
-    }
+		angleA = 60;
+		angleB = 60;
+		angleC = 60;
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << std::endl;
-    }
+		this->sides = sides;
+	}
+
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideB && sideA == sideC && sideB == sideC && angleA == angleC) {
+			return true;
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
+	}
+
+private:
+	int sideA, sideB, sideC;
+	int angleA, angleB, angleC;
 };
-
 
 class Quadrilateral : public Figure {
-protected:
-    int a;
-    int b;
-    int c;
-    int d;
-
-    int A;
-    int B;
-    int C;
-    int D;
-
-    bool check() override {
-        if(sidesCount == 4 && A + B + C + D == 360) {
-            return true;
-        }
-        return false;
-    }
-
 public:
-    Quadrilateral(int a, int b, int c, int d, int A, int B, int C, int D, std::string name, int sidesCount) : Figure(name) {
-        this->a = a;
-        this->b = b;
-        this->c = c;
-        this->d = d;
+	Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, int sides) : Figure("Quadrilateral", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		this->sideC = sideC;
+		this->sideD = sideD;
 
-        this->A = A;
-        this->B = B;
-        this->C = C;
-        this->D = D;
+		this->angleA = angleA;
+		this->angleB = angleB;
+		this->angleC = angleC;
+		this->angleD = angleD;
+		
+		this->sides = sides;
+	}
 
-        this->name = name;
-        this->sidesCount = sidesCount;
-    }
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-    }
+protected:
+	bool check() override {
+		int answer = angleA + angleB + angleC + angleD;
+		if (sides == 4 && answer == 360) {
+			return true;
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+	}
+
+private:
+	int sideA, sideB, sideC, sideD;
+	int angleA, angleB, angleC, angleD;
 };
 
-class Parallelogram : public Quadrilateral {
-protected:
-    bool check() override {
-        if(a == c && b == d && A == C && B == D) {
-            return true;
-        }
-        return false;
-    }
-
+class Rectangle : public Figure {
 public:
-    Parallelogram(int a, int b, int A, int B, std::string name, int sidesCount) : Quadrilateral(a, b, c, d, A, B, C, D, name, sidesCount) {
-        c = a;
-        d = b;
+	Rectangle(int sideA, int sideB, int sides) : Figure("Rectangle", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		sideC = sideA;
+		sideD = sideB;
 
-        C = A;
-        D = B;
+		angleA = 90;
+		angleB = 90;
+		angleC = 90;
+		angleD = 90;
 
-        this->name = name;
-    }
+		this->sides = sides;
+	}
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-    }
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideC && sideB == sideD) {
+			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+	}
+
+private:
+	int sideA, sideB, sideC, sideD;
+	int angleA, angleB, angleC, angleD;
 };
 
-class Rectangle : public Parallelogram {
-protected:
-    bool check() override {
-        if(a == c && b == d && A == 90 && B == 90 && C == 90 && D == 90) {
-            return true;
-        }
-        return false;
-    }
-
+class Square : public Figure {
 public:
-    Rectangle(int a, int b, std::string name, int sidesCount) : Parallelogram(a, b, 90, 90, name, sidesCount) {
-        c = a;
-        d = b;
+	Square(int sideA, int sides) : Figure("Square", 0) {
+		this->sideA = sideA;
+		sideB = sideA;
+		sideC = sideA;
+		sideD = sideA;
 
-        this->name = name;
-    }
+		angleA = 90;
+		angleB = 90;
+		angleC = 90;
+		angleD = 90;
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-    }
+		this->sides = sides;
+	}
+
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
+			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+	}
+
+private:
+	int sideA, sideB, sideC, sideD;
+	int angleA, angleB, angleC, angleD;
 };
 
-class Rhombus : public Parallelogram {
-protected:
-    bool check() override {
-        if(a == b && a == c && a == d && b == c && b == d && c == d && A == C && B == D) {
-            return true;
-        }
-        return false;
-    }
-
+class Parallelogram : public Figure {
 public:
-    Rhombus(int a, int A, int B, std::string name, int sidesCount) : Parallelogram(a, b, A, B, name, sidesCount) {
-        b = a;
-        c = a;
-        d = a;
+	Parallelogram(int sideA, int sideB, int angleA, int angleB, int sides) : Figure("Parallelogram", 0) {
+		this->sideA = sideA;
+		this->sideB = sideB;
+		sideC = sideA;
+		sideD = sideB;
 
-        C = A;
-        D = B;
+		this->angleA = angleA;
+		this->angleB = angleB;
+		angleC = angleA;
+		angleD = angleB;
 
-        this->name = name;
-    }
+		this->sides = sides;
+	}
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-    }
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideC && sideB == sideD) {
+			if (angleA == angleC && angleB == angleD) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+	}
+
+private:
+	int sideA, sideB, sideC, sideD;
+	int angleA, angleB, angleC, angleD;
 };
 
-class Square : public Rhombus {
-protected:
-    bool check() override {
-        if(a == b && a == c && a == d && b == c && b == d && c == d && A == 90 && B == 90 && C == 90 && D == 90) {
-            return true;
-        }
-        return false;
-    }
-
+class Rhombus : public Figure {
 public:
-    Square(int a, std::string name, int sidesCount) : Rhombus(a, 90, 90, name, sidesCount) {
-        b = a;
-        c = a;
-        d = a;
+	Rhombus(int sideA, int angleA, int angleB, int sides) : Figure("Rhombus", 0) {
+		this->sideA = sideA;
+		sideB = sideA;
+		sideC = sideA;
+		sideD = sideA;
 
-        this->name = name;
-    }
+		this->angleA = angleA;
+		this->angleB = angleB;
+		angleC = angleA;
+		angleD = angleB;
+	}
 
-    void printInfo() override {
-        std::cout << name << ":" << std::endl;
-        if(check()) {
-            std::cout << "Правильная" << std::endl;
-        }
-        else {
-            std::cout << "Неправильная" << std::endl;
-        }
-        std::cout << "Количество сторон: " << sidesCount << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d=" << d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << D << std::endl;
-    }
+	void print() override {
+		std::cout << name << ":" << std::endl;
+		if (check()) {
+			std::cout << "Правильная" << std::endl;
+		}
+		else {
+			std::cout << "Неправильная" << std::endl;
+		}
+		std::cout << "Количество сторон: " << sides << std::endl;
+		std::cout << "Стороны: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Углы: ";
+		print_angles();
+	}
+
+protected:
+	bool check() override {
+		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
+			if (angleA == angleC && angleB == angleD) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	virtual void print_sides() {
+		std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+	}
+
+	virtual void print_angles() {
+		std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+	}
+
+private:
+	int sideA, sideB, sideC, sideD;
+	int angleA, angleB, angleC, angleD;
 };
 
-void getInfo(Figure* figure) {
-    figure->printInfo();
-    std::cout << std::endl;
+void print(Figure& figure) {
+	figure.print();
+	std::cout << std::endl;
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+	Figure figure("Figure", 0);
+	Triangle trian(10, 20, 30, 50, 60, 70, 3);
+	Right right(10, 20, 30, 50, 60, 3);
+	Isosceles isos(10, 20, 50, 60, 3);
+	Equilateral equil(10, 3);
+	Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80, 4);
+	Rectangle rect(10, 20, 4);
+	Square square(20, 4);
+	Parallelogram parall(20, 30, 30, 40, 4);
+	Rhombus rhombus(30, 30, 40, 4);
 
-    //*Треугольники
-    Figure figure("Фигура");
-    Triangle trian(10, 20, 30, 50, 60, 70, "Треугольник", 3);
-    RightTriangle rightTrian(10, 20, 30, 50, 60, "Прямоугольный треугольник", 3);
-    IsoscelesTriangle isoscelesTrian(10, 20, 50, 60, "Равнобедренный треугольник", 3);
-    EqualTriangle equalTrian(30, "Равносторонний треугольник", 3);
+	print(figure);
+	print(trian);
+	print(right);
+	print(isos);
+	print(equil);
+	print(quad);
+	print(rect);
+	print(square);
+	print(parall);
+	print(rhombus);
 
-    //*Четырехугольники
-    Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80, "Четырехугольник", 4);
-    Rectangle rect(10, 20, "Прямоугольник", 4);
-    Square square(20, "Квадрат", 4);
-    Parallelogram parall(20, 30, 30, 40, "Параллелограмм", 4);
-    Rhombus rhombus(30, 30, 40, "Ромб", 4);
-
-    getInfo(&figure);
-    getInfo(&trian);
-    getInfo(&rightTrian);
-    getInfo(&isoscelesTrian);
-    getInfo(&equalTrian);
-    getInfo(&quad);
-    getInfo(&rect);
-    getInfo(&square);
-    getInfo(&parall);
-    getInfo(&rhombus);
-
-    return 0;
+	return 0;
 }
