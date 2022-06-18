@@ -1,0 +1,48 @@
+﻿  ClassHierarchy.cpp
+  Equilateral.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.cpp(6,1): error C2084: функция "Equilateral::Equilateral(int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Figure.cpp
+  Isosceles.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.cpp(6,1): error C2084: функция "Isosceles::Isosceles(int,int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Parallelogram.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.cpp(6,1): error C2084: функция "Parallelogram::Parallelogram(int,int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Quadrilateral.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.cpp(6,1): error C2084: функция "Quadrilateral::Quadrilateral(int,int,int,int,int,int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Rectangle.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.cpp(6,1): error C2084: функция "Rectangle::Rectangle(int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Rhombus.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.cpp(6,1): error C2084: функция "Rhombus::Rhombus(int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Right.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.cpp(6,1): error C2084: функция "Right::Right(int,int,int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Square.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.cpp(6,1): error C2084: функция "Square::Square(int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Triangle.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.cpp(6,1): error C2084: функция "Triangle::Triangle(int,int,int,int,int,int)" уже имеет текст реализации
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.h(7): message : см. предыдущее определение "{ctor}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.cpp(6,1): error C2512: Figure: нет подходящего конструктора по умолчанию
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Figure.h(4,7): message : см. объявление "Figure"
+  Создание кода...
