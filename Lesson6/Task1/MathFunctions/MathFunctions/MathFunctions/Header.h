@@ -1,16 +1,16 @@
-#pragma once
+п»ї#pragma once
 
-//Сложение
+//РЎР»РѕР¶РµРЅРёРµ
 int addition(int a, int b);
 
-//Вычитание
+//Р’С‹С‡РёС‚Р°РЅРёРµ
 int subtraction(int a, int b);
 
-//Умножение
+//РЈРјРЅРѕР¶РµРЅРёРµ
 int multiplication(int a, int b);
 
-//Деление
+//Р”РµР»РµРЅРёРµ
 int division(int a, int b);
 
-//Возведение в степень
+//Р’РѕР·РІРµРґРµРЅРёРµ РІ СЃС‚РµРїРµРЅСЊ
 int exponentiation(int a, int b);

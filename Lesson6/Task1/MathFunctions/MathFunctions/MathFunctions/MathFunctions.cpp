@@ -6,6 +6,7 @@ int main() {
     setlocale(LC_ALL, "Russian");
     int a = 0, b = 0;
     int operation = 0;
+    bool divis = false;
 
     std::cout << "Введите первой число: ";
     std::cin >> a;
@@ -15,10 +16,19 @@ int main() {
 
     if (a == 0 || b == 0) {
         std::cout << "Деление будет невозможно! Остальные функции разрешены" << std::endl;
+        divis = true;
     }
 
-    std::cout << "Выберите операцию (1 - сложение, 2 вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
-    std::cin >> operation;
+    if (divis == false)
+    {
+        std::cout << "Выберите операцию (1 - сложение, 2 вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
+        std::cin >> operation;
+    }
+    else
+    {
+        std::cout << "Выберите операцию (1 - сложение, 2 вычитание, 3 - умножение, 4 - возведение в степень): ";
+        std::cin >> operation;
+    }
 
     if (operation <= 0) {
         std::cout << "Такой операции не существует!" << std::endl;
