@@ -31,7 +31,7 @@ private:
 
 class Triangle : public Figure {
 public:
-    Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Triangle") {
+    Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle) : Figure(nameTriangle) {
         this->sideA = sideA;
         this->sideB = sideB;
         this->sideC = sideC;
@@ -42,29 +42,23 @@ public:
     }
 
 protected:
-    virtual void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
     }
 
-    virtual void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
     }
 
-private:
     int sideA, sideB, sideC;
     int angleA, angleB, angleC;
 };
 
-class RightTriangle : public Figure {
+class RightTriangle : public Triangle {
 public:
-    RightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB) : Figure("Right Triangle") {
-        this->sideA = sideA;
-        this->sideB = sideB;
-        this->sideC = sideC;
-
-        this->angleA = angleA;
-        this->angleB = angleB;
+    RightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
         angleC = 90;
+        
     }
 
 protected:
@@ -76,41 +70,30 @@ protected:
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
     }
 
-private:
-    int sideA, sideB, sideC;
-    int angleA, angleB, angleC;
 };
 
-class Isosceles : public Figure {
+class Isosceles : public Triangle {
 public:
-    Isosceles(int sideA, int sideB, int angleA, int angleB) : Figure("Isosceles Triangle") {
-        this->sideA = sideA;
-        this->sideB = sideB;
+    Isosceles(int sideA, int sideB, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
         sideC = sideA;
 
-        this->angleA = angleA;
-        this->angleB = angleB;
         angleC = angleA;
+        
     }
 
 protected:
-    void print_sides()  {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
     }
 
-    void print_angles()  {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
     }
-
-private:
-    int sideA, sideB, sideC;
-    int angleA, angleB, angleC;
 };
 
-class Equilateral : public Figure {
+class Equilateral : public Triangle {
 public:
-    Equilateral(int sideA) : Figure("Equilateral Triangle") {
-        this->sideA = sideA;
+    Equilateral(int sideA, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
         sideB = sideA;
         sideC = sideA;
 
@@ -120,17 +103,14 @@ public:
     }
 
 protected:
-    void print_sides()  {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC;
     }
 
-    void print_angles()  {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC;
     }
 
-private:
-    int sideA, sideB, sideC;
-    int angleA, angleB, angleC;
 };
 
 class Quadrilateral : public Figure {
@@ -148,11 +128,11 @@ public:
     }
 
 protected:
-    void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
 
-    void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
@@ -176,11 +156,11 @@ public:
     }
 
 protected:
-    void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
 
-    void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
@@ -204,11 +184,11 @@ public:
     }
 
 protected:
-    void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
 
-    void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
@@ -232,11 +212,11 @@ public:
     }
 
 protected:
-    void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
 
-    void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
@@ -260,11 +240,11 @@ public:
     }
 
 protected:
-    void print_sides() {
+    void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
 
-    void print_angles() {
+    void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
@@ -281,10 +261,10 @@ void print(Figure& figure) {
 
 int main() {
     //setlocale(LC_ALL, "Russian");
-    Triangle trian(10, 20, 30, 50, 60, 70);
-    RightTriangle right(10, 20, 30, 50, 60);
-    Isosceles isos(10, 20, 50, 60);
-    Equilateral equil(10);
+    Triangle trian(10, 20, 30, 50, 60, 70, "Triangle");
+    RightTriangle right(10, 20, 30, 50, 60, "Right Triangle");
+    Isosceles isos(10, 20, 50, 60, "Isosceles Triangle");
+    Equilateral equil(10, "Equilateral Triangle");
     Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80);
     Rectangle rect(10, 20);
     Square square(20);
@@ -300,5 +280,9 @@ int main() {
     print(square);
     print(parall);
     print(rhombus);
+
+    int exit;
+    std::cout << "To exit, press any button and then 'enter'." << std::endl;
+    std::cin >> exit;
     return 0;
 }
