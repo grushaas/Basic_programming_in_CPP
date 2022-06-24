@@ -1,2 +1,46 @@
 ﻿  Figure_SidesAndCorners.cpp
-  Figure_SidesAndCorners.vcxproj -> C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\x64\Debug\Figure_SidesAndCorners.exe
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(143,40): error C2504: Parallelogram: не определен базовый класс
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(156,10): error C3668: Rectangle::print_sides: метод со спецификатором переопределения "override" не переопределяет какие-либо методы базового класса
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(160,10): error C3668: Rectangle::print_angles: метод со спецификатором переопределения "override" не переопределяет какие-либо методы базового класса
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(145,98): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(145,106): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(145,70): error C2614: Rectangle: недопустимая инициализация члена: "Parallelogram" не является базовым классом или членом
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(146,9): error C2065: sideC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(147,9): error C2065: sideD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(149,9): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(150,9): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(151,9): error C2065: angleC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(152,9): error C2065: angleD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(157,32): error C2065: sideA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(157,52): error C2065: sideB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(157,72): error C2065: sideC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(157,92): error C2065: sideD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(161,32): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(161,53): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(161,74): error C2065: angleC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(161,95): error C2065: angleD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(165,31): error C2504: Rhombus: не определен базовый класс
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(179,10): error C3668: Square::print_sides: метод со спецификатором переопределения "override" не переопределяет какие-либо методы базового класса
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(183,10): error C3668: Square::print_angles: метод со спецификатором переопределения "override" не переопределяет какие-либо методы базового класса
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(167,71): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(167,79): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(167,56): error C2614: Square: недопустимая инициализация члена: "Rhombus" не является базовым классом или членом
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(168,9): error C2065: sideB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(169,9): error C2065: sideC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(170,9): error C2065: sideD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(172,9): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(173,9): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(174,9): error C2065: angleC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(175,9): error C2065: angleD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(180,32): error C2065: sideA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(180,52): error C2065: sideB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(180,72): error C2065: sideC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(180,92): error C2065: sideD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(184,32): error C2065: angleA: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(184,53): error C2065: angleB: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(184,74): error C2065: angleC: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(184,95): error C2065: angleD: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(252,15): error C2664: "void print(Figure &)": невозможно преобразовать аргумент 1 из "Rectangle" в "Figure &"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(229,6): message : см. объявление "print"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(253,17): error C2664: "void print(Figure &)": невозможно преобразовать аргумент 1 из "Square" в "Figure &"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson5\Task2\Figure_SidesAndCorners\Figure_SidesAndCorners.cpp(229,6): message : см. объявление "print"

@@ -91,9 +91,9 @@ protected:
     }
 };
 
-class Equilateral : public Triangle {
+class Equilateral : public Isosceles {
 public:
-    Equilateral(int sideA, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
+    Equilateral(int sideA, std::string nameTriangle) : Isosceles(sideA, sideB, angleA, angleB, nameTriangle) {
         sideB = sideA;
         sideC = sideA;
 
@@ -115,7 +115,7 @@ protected:
 
 class Quadrilateral : public Figure {
 public:
-    Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Quadrilateral") {
+    Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrilateral) : Figure(nameQuadrilateral) {
         this->sideA = sideA;
         this->sideB = sideB;
         this->sideC = sideC;
@@ -136,16 +136,13 @@ protected:
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
 
-private:
     int sideA, sideB, sideC, sideD;
     int angleA, angleB, angleC, angleD;
 };
 
-class Rectangle : public Figure {
+class Rectangle : public Parallelogram {
 public:
-    Rectangle(int sideA, int sideB) : Figure("Rectangle") {
-        this->sideA = sideA;
-        this->sideB = sideB;
+    Rectangle(int sideA, int sideB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
         sideC = sideA;
         sideD = sideB;
 
@@ -163,16 +160,11 @@ protected:
     void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
-
-private:
-    int sideA, sideB, sideC, sideD;
-    int angleA, angleB, angleC, angleD;
 };
 
-class Square : public Figure {
+class Square : public Rhombus {
 public:
-    Square(int sideA) : Figure("Square") {
-        this->sideA = sideA;
+    Square(int sideA, std::string nameQuadrilateral) : Rhombus(sideA, angleA, angleB, nameQuadrilateral) {
         sideB = sideA;
         sideC = sideA;
         sideD = sideA;
@@ -191,22 +183,14 @@ protected:
     void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
-
-private:
-    int sideA, sideB, sideC, sideD;
-    int angleA, angleB, angleC, angleD;
 };
 
-class Parallelogram : public Figure {
+class Parallelogram : public Quadrilateral {
 public:
-    Parallelogram(int sideA, int sideB, int angleA, int angleB) : Figure("Parallelogram") {
-        this->sideA = sideA;
-        this->sideB = sideB;
+    Parallelogram(int sideA, int sideB, int angleA, int angleB, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral) {
         sideC = sideA;
         sideD = sideB;
 
-        this->angleA = angleA;
-        this->angleB = angleB;
         angleC = angleA;
         angleD = angleB;
     }
@@ -219,22 +203,15 @@ protected:
     void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
-
-private:
-    int sideA, sideB, sideC, sideD;
-    int angleA, angleB, angleC, angleD;
 };
 
-class Rhombus : public Figure {
+class Rhombus : public Parallelogram {
 public:
-    Rhombus(int sideA, int angleA, int angleB) : Figure("Rhombus") {
-        this->sideA = sideA;
+    Rhombus(int sideA, int angleA, int angleB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
         sideB = sideA;
         sideC = sideA;
         sideD = sideA;
 
-        this->angleA = angleA;
-        this->angleB = angleB;
         angleC = angleA;
         angleD = angleB;
     }
@@ -247,10 +224,6 @@ protected:
     void print_angles() override {
         std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
     }
-
-private:
-    int sideA, sideB, sideC, sideD;
-    int angleA, angleB, angleC, angleD;
 };
 
 void print(Figure& figure) {
@@ -265,11 +238,11 @@ int main() {
     RightTriangle right(10, 20, 30, 50, 60, "Right Triangle");
     Isosceles isos(10, 20, 50, 60, "Isosceles Triangle");
     Equilateral equil(10, "Equilateral Triangle");
-    Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80);
-    Rectangle rect(10, 20);
-    Square square(20);
-    Parallelogram parall(20, 30, 30, 40);
-    Rhombus rhombus(30, 30, 40);
+    Quadrilateral quad(10, 20, 30, 40, 50, 60, 70, 80, "Quadrilateral");
+    Rectangle rect(10, 20, "Rectangle");
+    Square square(20, "Square");
+    Parallelogram parall(20, 30, 30, 40, "Parallelogram");
+    Rhombus rhombus(30, 30, 40, "Rhombus");
 
     print(trian);
     print(right);
