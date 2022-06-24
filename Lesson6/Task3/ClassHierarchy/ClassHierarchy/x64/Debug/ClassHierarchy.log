@@ -107,7 +107,7 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.3132
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.cpp(4,53): error C2084: функция "Rhombus::Rhombus(int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.h(7): message : см. предыдущее определение "{ctor}"
   Right.cpp
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(7,91): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(7,93): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
