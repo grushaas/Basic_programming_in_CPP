@@ -4,7 +4,7 @@
 class Right : public Figure
 {
 public:
-	Right(int sideA, int sideB, int sideC, int angleA, int angleB) : Figure("Right Triangle")	 ;
+	Right(int sideA, int sideB, int sideC, int angleA, int angleB);
 
 protected:
 	void print_sides() override;

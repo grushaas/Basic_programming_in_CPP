@@ -4,7 +4,7 @@
 class Parallelogram : public Figure
 {
 public:
-	Parallelogram(int sideA, int sideB, int angleA, int angleB) : Figure("Parallelogram");
+	Parallelogram(int sideA, int sideB, int angleA, int angleB);
 
 protected:
 	void print_sides();

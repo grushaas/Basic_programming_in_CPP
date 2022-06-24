@@ -4,7 +4,7 @@
 class Triangle : public Figure 
 {
 public:
-	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Triangle");
+	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC);
 
 protected:
 	virtual void print_sides();

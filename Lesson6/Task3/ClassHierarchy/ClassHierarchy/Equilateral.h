@@ -4,7 +4,7 @@
 class Equilateral : public Figure
 {
 public:
-	Equilateral(int sideA) : Figure("Equilateral Triangle");
+	Equilateral(int sideA);
 
 protected:
 	void print_sides();
