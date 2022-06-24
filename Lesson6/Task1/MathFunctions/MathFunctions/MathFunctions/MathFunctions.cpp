@@ -14,7 +14,7 @@ int main() {
     std::cout << "Введите второе число: ";
     std::cin >> b;
 
-    if (a == 0 || b == 0) {
+    if (b == 0) {
         std::cout << "Деление будет невозможно! Остальные функции разрешены" << std::endl;
         divis = true;
     }
@@ -51,9 +51,16 @@ int main() {
             break;
 
         case 4:
-            std::cout << a << " / " << b << " = " << division(a, b) << std::endl;
-            break;
-
+            if (divis == true)
+            {
+                std::cout << a << " в степени " << b << " = " << exponentiation(a, b) << std::endl;
+                break;
+            }
+            else
+            {
+                std::cout << a << " / " << b << " = " << division(a, b) << std::endl;
+                break;
+            }
         case 5:
             std::cout << a << " в степени " << b << " = " << exponentiation(a, b) << std::endl;
 
