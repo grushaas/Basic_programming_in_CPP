@@ -4,7 +4,7 @@
 class Isosceles : public Figure
 {
 public:
-	Isosceles(int sideA, int sideB, int angleA, int angleB) : Figure("Isosceles Triangle") {};
+	Isosceles(int sideA, int sideB, int angleA, int angleB) : Figure("Isosceles Triangle");
 
 protected:
 	void print_sides();

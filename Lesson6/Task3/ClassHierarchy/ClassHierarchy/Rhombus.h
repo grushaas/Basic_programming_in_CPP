@@ -4,7 +4,7 @@
 class Rhombus : public Figure
 {
 public:
-	Rhombus(int sideA, int angleA, int angleB) : Figure("Rhombus") {};
+	Rhombus(int sideA, int angleA, int angleB) : Figure("Rhombus");
 
 protected:
 	void print_sides();

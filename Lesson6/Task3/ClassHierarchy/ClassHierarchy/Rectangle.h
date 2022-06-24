@@ -4,7 +4,7 @@
 class Rectangle : public Figure
 {
 public:
-	Rectangle(int sideA, int sideB) : Figure("Rectangle") {};
+	Rectangle(int sideA, int sideB) : Figure("Rectangle");
 
 protected:
 	void print_sides();

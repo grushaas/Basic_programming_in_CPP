@@ -4,7 +4,7 @@
 class Square : public Figure
 {
 public:
-	Square(int sideA) : Figure("Square") {};
+	Square(int sideA) : Figure("Square");
 
 protected:
 	void print_sides();

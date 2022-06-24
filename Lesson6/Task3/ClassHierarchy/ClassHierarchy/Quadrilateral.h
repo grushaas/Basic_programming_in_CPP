@@ -4,7 +4,7 @@
 class Quadrilateral : public Figure
 {
 public:
-	Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Quadrilateral") {};
+	Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Quadrilateral");
 
 protected:
 	void print_sides();

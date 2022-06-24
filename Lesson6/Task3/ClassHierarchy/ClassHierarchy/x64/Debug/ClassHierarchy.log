@@ -1,15 +1,69 @@
 ﻿  ClassHierarchy.cpp
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(7,57): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(4,7): error C2059: синтаксическая ошибка: <class-head>
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(5,1): error C2630: обнаружен ";" в списке с разделителем-запятой
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(6,1): error C2059: синтаксическая ошибка: public
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(7,134): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(9,1): error C2059: синтаксическая ошибка: protected
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(14,1): error C2059: синтаксическая ошибка: private
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(26,5): error C2065: Quadrilateral: необъявленный идентификатор
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(26,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "quad"
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(26,19): error C3861: quad: идентификатор не найден
-C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(36,11): error C2065: quad: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.h(7,100): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(4,7): error C2059: синтаксическая ошибка: <class-head>
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(5,1): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(6,1): error C2059: синтаксическая ошибка: public
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(9,1): error C2059: синтаксическая ошибка: protected
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(12,30): error C3158: "print_angles": "override" можно применять только к виртуальной функции-члену
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(12,7): error C2575: print_angles: только функции-члены и базовые классы могут быть виртуальными
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(14,1): error C2059: синтаксическая ошибка: private
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(16,12): error C2082: переопределение формального параметра "angleA"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(16,20): error C2082: переопределение формального параметра "angleB"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(16,28): error C2082: переопределение формального параметра "angleC"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.h(7,88): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(4,7): error C2059: синтаксическая ошибка: <class-head>
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(5,1): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(6,1): error C2059: синтаксическая ошибка: public
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(9,1): error C2059: синтаксическая ошибка: protected
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(14,1): error C2059: синтаксическая ошибка: private
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(16,12): error C2082: переопределение формального параметра "angleA"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(16,20): error C2082: переопределение формального параметра "angleB"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(7,133): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(4,7): error C2059: синтаксическая ошибка: <class-head>
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(5,1): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(6,1): error C2059: синтаксическая ошибка: public
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(9,1): error C2059: синтаксическая ошибка: protected
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(14,1): error C2059: синтаксическая ошибка: private
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(16,12): error C2082: переопределение формального параметра "angleA"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(16,20): error C2082: переопределение формального параметра "angleB"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(16,28): error C2082: переопределение формального параметра "angleC"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(16,36): error C2082: переопределение формального параметра "angleD"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.h(7,38): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(4,7): error C2059: синтаксическая ошибка: <class-head>
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(5,1): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(6,1): error C2059: синтаксическая ошибка: public
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(9,1): error C2059: синтаксическая ошибка: protected
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(14,1): error C2059: синтаксическая ошибка: private
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.h(7,64): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(13,6): error C2222: непредвиденный тип "void": ожидался базовый класс или член
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(13,6): error C2061: синтаксическая ошибка: идентификатор "print"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(14,1): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(15,5): error C2065: figure: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(23,5): error C2065: Right: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(23,11): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "right"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(23,11): error C3861: right: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(25,5): error C2065: Equilateral: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(25,17): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "equil"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(25,17): error C3861: equil: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(27,5): error C2065: Rectangle: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(27,15): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "rect"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(27,15): error C3861: rect: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(29,5): error C2065: Parallelogram: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(29,19): error C2146: синтаксическая ошибка: отсутствие ";" перед идентификатором "parall"
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(29,19): error C3861: parall: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(32,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(33,11): error C2065: right: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(33,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(34,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(35,11): error C2065: equil: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(35,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(36,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(37,11): error C2065: rect: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(37,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(38,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(39,11): error C2065: parall: необъявленный идентификатор
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(39,5): error C3861: print: идентификатор не найден
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\ClassHierarchy.cpp(40,5): error C3861: print: идентификатор не найден
   Equilateral.cpp
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(7,57): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
@@ -17,29 +71,60 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.3132
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.cpp(4,37): error C2084: функция "Equilateral::Equilateral(int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Equilateral.h(7): message : см. предыдущее определение "{ctor}"
-  Figure.cpp
   Isosceles.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.h(7,88): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.cpp(4,68): error C2084: функция "Isosceles::Isosceles(int,int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Isosceles.h(7): message : см. предыдущее определение "{ctor}"
   Parallelogram.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(7,87): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.cpp(4,76): error C2084: функция "Parallelogram::Parallelogram(int,int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Parallelogram.h(7): message : см. предыдущее определение "{ctor}"
   Quadrilateral.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(7,133): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.cpp(4,122): error C2084: функция "Quadrilateral::Quadrilateral(int,int,int,int,int,int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Quadrilateral.h(7): message : см. предыдущее определение "{ctor}"
   Rectangle.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(7,55): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.cpp(4,44): error C2084: функция "Rectangle::Rectangle(int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rectangle.h(7): message : см. предыдущее определение "{ctor}"
   Rhombus.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.h(7,64): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.cpp(4,53): error C2084: функция "Rhombus::Rhombus(int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Rhombus.h(7): message : см. предыдущее определение "{ctor}"
   Right.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(7,91): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.cpp(4,71): error C2084: функция "Right::Right(int,int,int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Right.h(7): message : см. предыдущее определение "{ctor}"
   Square.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.h(7,38): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.cpp(4,27): error C2084: функция "Square::Square(int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Square.h(7): message : см. предыдущее определение "{ctor}"
   Triangle.cpp
+C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.h(7,100): error C2969: синтаксическая ошибка: ;: требуется определение функции-члена до "}"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,1): error C2059: синтаксическая ошибка: attribute specifier
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(36,89): error C2630: обнаружен ";" в списке с разделителем-запятой
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326\include\cmath(37,24): error C2065: _Xx: необъявленный идентификатор
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.cpp(4,89): error C2084: функция "Triangle::Triangle(int,int,int,int,int,int)" уже имеет текст реализации
 C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson6\Task3\ClassHierarchy\ClassHierarchy\Triangle.h(7): message : см. предыдущее определение "{ctor}"
   Создание кода...
