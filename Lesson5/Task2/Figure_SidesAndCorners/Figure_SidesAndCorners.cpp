@@ -140,6 +140,47 @@ protected:
     int angleA, angleB, angleC, angleD;
 };
 
+class Parallelogram : public Quadrilateral {
+public:
+    Parallelogram(int sideA, int sideB, int angleA, int angleB, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral) {
+        sideC = sideA;
+        sideD = sideB;
+
+        angleC = angleA;
+        angleD = angleB;
+    }
+
+protected:
+    void print_sides() override {
+        std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+    }
+
+    void print_angles() override {
+        std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+    }
+};
+
+class Rhombus : public Parallelogram {
+public:
+    Rhombus(int sideA, int angleA, int angleB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
+        sideB = sideA;
+        sideC = sideA;
+        sideD = sideA;
+
+        angleC = angleA;
+        angleD = angleB;
+    }
+
+protected:
+    void print_sides() override {
+        std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
+    }
+
+    void print_angles() override {
+        std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
+    }
+};
+
 class Rectangle : public Parallelogram {
 public:
     Rectangle(int sideA, int sideB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
@@ -176,47 +217,7 @@ public:
     }
 
 protected:
-    void print_sides() override {
-        std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
-    }
-
-    void print_angles() override {
-        std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
-    }
-};
-
-class Parallelogram : public Quadrilateral {
-public:
-    Parallelogram(int sideA, int sideB, int angleA, int angleB, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral) {
-        sideC = sideA;
-        sideD = sideB;
-
-        angleC = angleA;
-        angleD = angleB;
-    }
-
-protected:
-    void print_sides() override {
-        std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
-    }
-
-    void print_angles() override {
-        std::cout << "A = " << angleA << " B = " << angleB << " C = " << angleC << " D = " << angleD;
-    }
-};
-
-class Rhombus : public Parallelogram {
-public:
-    Rhombus(int sideA, int angleA, int angleB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
-        sideB = sideA;
-        sideC = sideA;
-        sideD = sideA;
-
-        angleC = angleA;
-        angleD = angleB;
-    }
-
-protected:
+    
     void print_sides() override {
         std::cout << "a = " << sideA << " b = " << sideB << " c = " << sideC << " d = " << sideD;
     }
