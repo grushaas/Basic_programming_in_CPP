@@ -56,7 +56,7 @@ protected:
 
 class RightTriangle : public Triangle {
 public:
-    RightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
+    RightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, 90, nameTriangle) {
         angleC = 90;
         
     }
@@ -74,7 +74,7 @@ protected:
 
 class Isosceles : public Triangle {
 public:
-    Isosceles(int sideA, int sideB, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle) {
+    Isosceles(int sideA, int sideB, int angleA, int angleB, std::string nameTriangle) : Triangle(sideA, sideB, sideA, angleA, angleB, angleA, nameTriangle) {
         sideC = sideA;
 
         angleC = angleA;
@@ -93,7 +93,7 @@ protected:
 
 class Equilateral : public Isosceles {
 public:
-    Equilateral(int sideA, std::string nameTriangle) : Isosceles(sideA, sideB, angleA, angleB, nameTriangle) {
+    Equilateral(int sideA, std::string nameTriangle) : Isosceles(sideA, sideA, 60, 60, nameTriangle) {
         sideB = sideA;
         sideC = sideA;
 
@@ -142,7 +142,7 @@ protected:
 
 class Parallelogram : public Quadrilateral {
 public:
-    Parallelogram(int sideA, int sideB, int angleA, int angleB, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral) {
+    Parallelogram(int sideA, int sideB, int angleA, int angleB, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideA, sideB, angleA, angleB, angleA, angleB, nameQuadrilateral) {
         sideC = sideA;
         sideD = sideB;
 
@@ -162,7 +162,7 @@ protected:
 
 class Rhombus : public Parallelogram {
 public:
-    Rhombus(int sideA, int angleA, int angleB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
+    Rhombus(int sideA, int angleA, int angleB, std::string nameQuadrilateral) : Parallelogram(sideA, sideA, angleA, angleB, nameQuadrilateral) {
         sideB = sideA;
         sideC = sideA;
         sideD = sideA;
@@ -183,7 +183,7 @@ protected:
 
 class Rectangle : public Parallelogram {
 public:
-    Rectangle(int sideA, int sideB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, angleA, angleB, nameQuadrilateral) {
+    Rectangle(int sideA, int sideB, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, 90, 90, nameQuadrilateral) {
         sideC = sideA;
         sideD = sideB;
 
@@ -205,7 +205,7 @@ protected:
 
 class Square : public Rhombus {
 public:
-    Square(int sideA, std::string nameQuadrilateral) : Rhombus(sideA, angleA, angleB, nameQuadrilateral) {
+    Square(int sideA, std::string nameQuadrilateral) : Rhombus(sideA, 90, 90, nameQuadrilateral) {
         sideB = sideA;
         sideC = sideA;
         sideD = sideA;
