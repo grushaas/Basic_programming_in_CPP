@@ -12,6 +12,12 @@ public:
 			std::cout << "Wrong" << std::endl;
 		}
 		std::cout << "Number of sides: " << sides << std::endl;
+		std::cout << "Sides: ";
+		print_sides();
+		std::cout << std::endl;
+		std::cout << "Angles: ";
+		print_angles();
+		std::cout << std::endl;
 	}
 
 	Figure(std::string name, int sides) {
@@ -22,11 +28,11 @@ public:
 protected:
 
 	virtual void print_sides() {
-
+		std::cout << "There are no sides";
 	}
 
 	virtual void print_angles() {
-
+		std::cout << "There are no corners";
 	}
 		
 	virtual bool check() {
@@ -57,34 +63,11 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
-
-	/*void print() override {
-		std::cout << name << ":" << std::endl;
-		if (check()) {
-			std::cout << "Correct" << std::endl;
-		}
-		else {
-			std::cout << "Wrong" << std::endl;
-		}
-		std::cout << "Number of sides: " << sides << std::endl;
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-	}*/
 
 protected:
 	bool check() override {
-		int answer = 0;
-		answer = angleA + angleB + angleC;
+		int answer = angleA + angleB + angleC;
 		if (sides == 3 && answer == 180) {
 			return true;
 		}
@@ -105,24 +88,20 @@ protected:
 
 class Right : public Triangle {
 public:
-	Right(int sideA, int sideB, int sideC, int angleA, int angleB, int sides, std::string name) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, sides, name) {
+	Right(int sideA, int sideB, int sideC, int angleA, int angleB, int sides, std::string name) : Triangle(sideA, sideB, sideC, angleA, angleB, 90, sides, name) {
 		angleC = 90;
 	}
 
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
-		if (angleC == 90) {
+		int answer = angleA + angleB + angleC;
+		if (sides == 3 && angleA + angleB + angleC == 180 && angleC == 90)
+		{
 			return true;
 		}
 		return false;
@@ -139,7 +118,7 @@ protected:
 
 class Isosceles : public Triangle {
 public:
-	Isosceles(int sideA, int sideB, int angleA, int angleB, int sides, std::string name) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, sides, name) {
+	Isosceles(int sideA, int sideB, int angleA, int angleB, int sides, std::string name) : Triangle(sideA, sideB, sideA, angleA, angleB, angleA, sides, name) {
 		sideC = sideA;
 
 		angleC = angleA;
@@ -148,17 +127,12 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
-		if (sideA == sideC && angleA == angleC) {
+		int answer = angleA + angleB + angleC;
+		if (sideA == sideC && angleA == angleC && angleA + angleB + angleC == 180 && sides == 3) {
 			return true;
 		}
 		return false;
@@ -175,7 +149,7 @@ protected:
 
 class Equilateral : public Isosceles {
 public:
-	Equilateral(int sideA, int sides, std::string name) : Isosceles(sideA, sideB, angleA, angleB, sides, name) {
+	Equilateral(int sideA, int sides, std::string name) : Isosceles(sideA, sideA, 60, 60, sides, name) {
 		sideB = sideA;
 		sideC = sideA;
 
@@ -187,17 +161,11 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
-		if (sideA == sideB && sideA == sideC && sideB == sideC && angleA == angleC) {
+		if (sideA == sideB && sideA == sideC && sideB == sideC && angleA == angleC && angleA + angleB + angleC == 180 && sides == 3) {
 			return true;
 		}
 		return false;
@@ -231,12 +199,6 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
@@ -261,7 +223,7 @@ protected:
 };
 class Parallelogram : public Quadrilateral {
 public:
-	Parallelogram(int sideA, int sideB, int angleA, int angleB, int sides, std::string name) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, sides, name) {
+	Parallelogram(int sideA, int sideB, int angleA, int angleB, int sides, std::string name) : Quadrilateral(sideA, sideB, sideA, sideB, angleA, angleB, angleA, angleB, sides, name) {
 		sideC = sideA;
 		sideD = sideB;
 
@@ -272,19 +234,16 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
 		if (sideA == sideC && sideB == sideD) {
-			if (angleA == angleC && angleB == angleD) {
-				return true;
+			if (angleA == angleC && angleB == angleD && sides == 4) {
+				if (angleA + angleB + angleC + angleD == 360)
+				{
+					return true;
+				}
 			}
 		}
 		return false;
@@ -301,7 +260,7 @@ protected:
 
 class Rhombus : public Parallelogram {
 public:
-	Rhombus(int sideA, int angleA, int angleB, int sides, std::string name) : Parallelogram(sideA, sideB, angleA, angleB, sides, name) {
+	Rhombus(int sideA, int angleA, int angleB, int sides, std::string name) : Parallelogram(sideA, sideA, angleA, angleB, sides, name) {
 		sideB = sideA;
 		sideC = sideA;
 		sideD = sideA;
@@ -313,19 +272,16 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
-		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
+		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD && sides == 4) {
 			if (angleA == angleC && angleB == angleD) {
-				return true;
+				if (angleA + angleB + angleC + angleD == 360)
+				{
+					return true;	
+				}
 			}
 		}
 		return false;
@@ -343,7 +299,7 @@ protected:
 
 class Rectangle : public Parallelogram {
 public:
-	Rectangle(int sideA, int sideB, int sides, std::string name) : Parallelogram(sideA, sideB, angleA, angleB, sides, name) {
+	Rectangle(int sideA, int sideB, int sides, std::string name) : Parallelogram(sideA, sideB, 90, 90, sides, name) {
 		sideC = sideA;
 		sideD = sideB;
 
@@ -356,19 +312,16 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
 		if (sideA == sideC && sideB == sideD) {
 			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
-				return true;
+				if (angleA + angleB + angleC + angleD == 360 && sides == 4)
+				{
+					return true;
+				}
 			}
 		}
 		return false;
@@ -385,7 +338,7 @@ protected:
 
 class Square : public Rhombus {
 public:
-	Square(int sideA, int sides, std::string name) : Rhombus(sideA, angleA, angleB, sides, name) {
+	Square(int sideA, int sides, std::string name) : Rhombus(sideA, 90, 90, sides, name) {
 		sideB = sideA;
 		sideC = sideA;
 		sideD = sideA;
@@ -399,19 +352,15 @@ public:
 	void print() override
 	{
 		Figure::print();
-		std::cout << "Sides: ";
-		print_sides();
-		std::cout << std::endl;
-		std::cout << "Angles: ";
-		print_angles();
-		std::cout << std::endl;
 	}
 
 protected:
 	bool check() override {
 		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
 			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
-				return true;
+				if (angleA + angleB + angleC + angleD == 360 && sides == 4) {
+					return true;
+				}
 			}
 		}
 		return false;
