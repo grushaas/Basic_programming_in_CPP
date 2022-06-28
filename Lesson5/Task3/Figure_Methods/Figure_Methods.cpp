@@ -48,7 +48,7 @@ protected:
 
 class Triangle : public Figure {
 public:
-	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, int sides, std::string name) : Figure(name, 0) {
+	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, int sides, std::string name) : Figure(name, sides) {
 		this->sideA = sideA;
 		this->sideB = sideB;
 		this->sideC = sideC;
