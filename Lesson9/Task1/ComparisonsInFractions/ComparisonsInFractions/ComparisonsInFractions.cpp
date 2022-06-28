@@ -5,6 +5,7 @@ class Fraction
 private:
 	int numerator_;
 	int denominator_;
+	int ch, zn;
 
 public:
 	Fraction(int numerator, int denominator)
@@ -13,34 +14,21 @@ public:
 		denominator_ = denominator;
 	}
 
-	double Abs()
+	double AddingFractions(Fraction frac)
 	{
-		return std::sqrt(numerator_ * numerator_ + denominator_ * denominator_);
+		ch = (numerator_ * frac.denominator_) + (this->denominator_ * frac.numerator_);
+		zn = (this->denominator_ * frac.denominator_);
+		return ch + zn;
 	}
 
 	bool operator==(Fraction frac)
 	{
-		return Abs() == frac.Abs();
+		return AddingFractions(frac) == frac.AddingFractions(frac);
 	}
-	bool operator!=(Fraction frac)
-	{
-		return !(*this == frac);
-	}
+
 	bool operator>(Fraction frac)
 	{
-		return Abs() > frac.Abs();
-	}
-	bool operator<(Fraction frac)
-	{
-		return frac > *this;
-	}
-	bool operator>=(Fraction frac)
-	{
-		return !(*this < frac);
-	}
-	bool operator<=(Fraction frac)
-	{
-		return !(*this > frac);
+		return AddingFractions(frac) > frac.AddingFractions(frac);
 	}
 };
 
@@ -50,10 +38,10 @@ int main()
 	Fraction f2(6, 11);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 < f2) ? " < " : " not < ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 > f2) ? " > " : " not > ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 <= f2) ? " <= " : " not <= ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 >= f2) ? " >= " : " not >= ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 == f2) ? " != " : " not != ") << "f2" << '\n';
+	std::cout << "f1" << (!(f2 > f1) ? " < " : " not < ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 > f2) ? " > " : " not > ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 > f2) ? " <= " : " not <= ") << "f2" << '\n';
+	std::cout << "f1" << (!(f1 > f2) ? " >= " : " not >= ") << "f2" << '\n';
 	return 0;
 }
