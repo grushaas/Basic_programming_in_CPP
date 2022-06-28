@@ -1,8 +1,15 @@
 #include "Parallelogram.h"
+#include "Exception.h"
 #include <iostream>
 
 Parallelogram::Parallelogram(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Parallelogram")
 {
+    if (sideA != sideC) throw Except("Стороны A и C не равны");
+    if (sideB != sideD) throw Except("Стороны B и D не равны");
+    if (angleA != angleC) throw Except("Углы A и C не равны");
+    if (angleB != angleD) throw Except("Углы B и D не равны");
+    if (angleA + angleB + angleC + angleD != 360) throw Except("Сумма углов не рав 360 градусов");
+    
     this->sideA = sideA;
     this->sideB = sideB;
     this->sideC = sideC;

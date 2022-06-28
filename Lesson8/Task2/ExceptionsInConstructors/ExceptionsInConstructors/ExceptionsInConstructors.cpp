@@ -24,13 +24,6 @@ enum class figure
     Rhombus
 };
 
-//void print(Figure& figure)
-//{
-//    figure.print();
-//    std::cout << std::endl;
-//    std::cout << std::endl;
-//}
-
 void InstanceVerification()
 {
     int number = 0;
@@ -62,15 +55,19 @@ void InstanceVerification()
             std::cin >> angleB;
             std::cout << "angleC - ";
             std::cin >> angleC;
-
             try
             {
-                if (angleA + angleB + angleC != 180) throw Except("сумма углов не равна 180");
                 Triangle trian(sideA, sideB, sideC, angleA, angleB, angleC);
-                std::cout << "Треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") создан" << std::endl;
+                std::cout << "Треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") создан " << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (Except& ex) 
+            { 
+                std::cout << "Треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; 
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -100,13 +97,17 @@ void InstanceVerification()
 
             try
             {
-                if (angleA + angleB + angleC != 180) throw Except("сумма углов не равна 180");
-                if (angleC != 90) throw Except("угол C не равен 90");
                 Right right(sideA, sideB, sideC, angleA, angleB, angleC);
                 std::cout << "Прямоугольный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Прямоугольный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex) 
+            { 
+                std::cout << "Прямоугольный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; 
+            }
+            catch (...) 
+            { 
+                std::cout << "Неизвестная ошибка!" << std::endl; 
+            }
             break;
 
         }
@@ -136,13 +137,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideC) throw Except("стороны A и C не равны");
-                if (angleA != angleC) throw Except("углы A и C не равны");
                 Isosceles isos(sideA, sideB, sideC, angleA, angleB, angleC);
                 std::cout << "Равнобедренный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Равнобедренный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Равнобедренный треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -172,13 +177,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideB || sideA != sideC || sideB != sideC) throw Except("все стороны не равны");
-                if (angleA != 60 || angleB != 60 || angleC != 60) throw Except("какой-то из углов не равен 60");
                 Equilateral equil(sideA, sideB, sideC, angleA, angleB, angleC);
                 std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -212,12 +221,17 @@ void InstanceVerification()
 
             try
             {
-                if (angleA + angleB + angleC + angleD != 360) throw Except("сумма углов не равен 360");
                 Quadrilateral quad(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD);
                 std::cout << "Четырехугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -251,14 +265,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideC) throw Except("стороны A и C не равны");
-                if (sideB != sideD) throw Except("стороны B и D не равны");
-                if (angleA != 90 || angleB != 90 || angleC != 90 || angleD != 90) throw Except("какой-то из углов не равен 90");
                 Rectangle rect(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD);
                 std::cout << "Прямоугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Прямоугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Прямоугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -292,13 +309,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideB || sideA != sideC || sideA != sideD || sideB != sideC || sideB != sideD || sideC != sideD) throw Except("стороны не равны");
-                if (angleA != 90 || angleB != 90 || angleC != 90 || angleD != 90) throw Except("какой-то из углов не равен 90");
                 Square square(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD);
                 std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -332,15 +353,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideC) throw Except("стороны A и C не равны");
-                if (sideB != sideD) throw Except("стороны B и D не равны");
-                if (angleA != angleC) throw Except("углы A и C не равны");
-                if (angleB != angleD) throw Except("углы B и D не равны");
                 Parallelogram parall(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD);
                 std::cout << "Параллелограмм (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Параллелограмм (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Параллелограмм (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }
@@ -374,13 +397,17 @@ void InstanceVerification()
 
             try
             {
-                if (sideA != sideB || sideA != sideC || sideA != sideD || sideB != sideC || sideB != sideD || sideC != sideD) throw Except("стороны не равны");
-                if (angleA != 90 || angleB != 90 || angleC != 90 || angleD != 90) throw Except("какой-то из углов не равен 90");
                 Rhombus rhomb(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD);
                 std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") создан" << std::endl;
             }
-            catch (const Except& ex) { std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl; }
-            catch (...) { std::cout << "Неизвестная ошибка!" << std::endl; }
+            catch (const Except& ex)
+            {
+                std::cout << "Квадрат (Стороны: " << sideA << ", " << sideB << ", " << sideC << ", " << sideD << "; углы " << angleA << ", " << angleB << ", " << angleC << ", " << angleD << ") не был создан. Причина: " << ex.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << "Неизвестная ошибка!" << std::endl;
+            }
             break;
 
         }

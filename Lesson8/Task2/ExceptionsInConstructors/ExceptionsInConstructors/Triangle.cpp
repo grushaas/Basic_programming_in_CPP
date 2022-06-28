@@ -1,8 +1,11 @@
 #include "Triangle.h"
+#include "Exception.h"
 #include <iostream>
 
 Triangle::Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Triangle")
 {
+    if (angleA + angleB + angleC != 180) throw Except("сумма углов не равна 180");
+
     this->sideA = sideA;
     this->sideB = sideB;
     this->sideC = sideC;

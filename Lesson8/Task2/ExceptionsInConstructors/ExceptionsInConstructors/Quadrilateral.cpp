@@ -1,8 +1,11 @@
 #include "Quadrilateral.h"
+#include "Exception.h"
 #include <iostream>
 
 Quadrilateral::Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Quadrilateral")
 {
+    if (angleA + angleB + angleC + angleD != 360) throw Except("Сумма углов не равен 360 градусов");
+
     this->sideA = sideA;
     this->sideB = sideB;
     this->sideC = sideC;
