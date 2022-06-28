@@ -3,7 +3,7 @@
 class ForbiddenWordLength : public std::exception
 {
 public:
-	const char* what() const override { return "Запретная длина слова. До свидания!"; }
+	const char* what() const override { return "Запретная длина слова!"; }
 };
 
 int function(std::string str, int forbiddenLength)
@@ -21,7 +21,7 @@ int main()
 
 	std::cout << "Введите запретную длину: ";
 	std::cin >> forbiddenLength;
-	while (str.length() != forbiddenLength)
+	while (true)
 	{
 		std::cout << "Введите слово: ";
 		std::cin >> str;
@@ -31,7 +31,7 @@ int main()
 		}
 		catch (const ForbiddenWordLength& forbidden)
 		{
-			std::cout << forbidden.what() << std::endl;
+			std::cout << forbidden.what() << "\nДлина слова равна - " << forbiddenLength << " Значение слова - " << str << std::endl;
 		}
 		catch (...)
 		{
