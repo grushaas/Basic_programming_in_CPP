@@ -99,12 +99,7 @@ public:
 
 protected:
 	bool check() override {
-		int answer = angleA + angleB + angleC;
-		if (sides == 3 && angleA + angleB + angleC == 180 && angleC == 90)
-		{
-			return true;
-		}
-		return false;
+		return Triangle::check() && angleC == 90;
 	}
 
 	void print_sides() override {
@@ -131,11 +126,7 @@ public:
 
 protected:
 	bool check() override {
-		int answer = angleA + angleB + angleC;
-		if (sideA == sideC && angleA == angleC && angleA + angleB + angleC == 180 && sides == 3) {
-			return true;
-		}
-		return false;
+		return Triangle::check() && sideA == sideC && angleA == angleC;
 	}
 
 	void print_sides() override {
@@ -165,10 +156,7 @@ public:
 
 protected:
 	bool check() override {
-		if (sideA == sideB && sideA == sideC && sideB == sideC && angleA == angleC && angleA + angleB + angleC == 180 && sides == 3) {
-			return true;
-		}
-		return false;
+		return Triangle::check() && sideA == sideB && sideA == sideC && sideB == sideC && angleA == 60 && angleB == 60 && angleC == 60;
 	}
 
 	void print_sides() override {
@@ -239,8 +227,8 @@ public:
 protected:
 	bool check() override {
 		if (sideA == sideC && sideB == sideD) {
-			if (angleA == angleC && angleB == angleD && sides == 4) {
-				if (angleA + angleB + angleC + angleD == 360)
+			if (angleA == angleC && angleB == angleD) {
+				if (Quadrilateral::check())
 				{
 					return true;
 				}
@@ -276,11 +264,11 @@ public:
 
 protected:
 	bool check() override {
-		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD && sides == 4) {
+		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
 			if (angleA == angleC && angleB == angleD) {
-				if (angleA + angleB + angleC + angleD == 360)
+				if (Quadrilateral::check())
 				{
-					return true;	
+					return true;
 				}
 			}
 		}
@@ -318,7 +306,7 @@ protected:
 	bool check() override {
 		if (sideA == sideC && sideB == sideD) {
 			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
-				if (angleA + angleB + angleC + angleD == 360 && sides == 4)
+				if (Quadrilateral::check())
 				{
 					return true;
 				}
@@ -349,16 +337,14 @@ public:
 		angleD = 90;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void Figure::print();
 
 protected:
 	bool check() override {
 		if (sideA == sideB && sideA == sideC && sideA == sideD && sideB == sideC && sideB == sideD && sideC == sideD) {
 			if (angleA == 90 && angleB == 90 && angleC == 90 && angleD == 90) {
-				if (angleA + angleB + angleC + angleD == 360 && sides == 4) {
+				if (Quadrilateral::check())
+				{
 					return true;
 				}
 			}
