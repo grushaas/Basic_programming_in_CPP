@@ -1,9 +1,11 @@
 ﻿#include <iostream>
+#include <string>
 
 class ForbiddenWordLength : public std::exception
 {
 public:
-	const char* what() const override { return "Запретная длина слова!"; }
+	
+	const char* what() const override { return "Запретная длина слова"; }
 };
 
 int function(std::string str, int forbiddenLength)
