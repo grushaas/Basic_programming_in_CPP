@@ -5,7 +5,6 @@ class Fraction
 private:
 	int numerator_;
 	int denominator_;
-	int ch, zn;
 
 public:
 	Fraction(int numerator, int denominator)
@@ -14,21 +13,70 @@ public:
 		denominator_ = denominator;
 	}
 
-	double AddingFractions(Fraction frac)
-	{
-		ch = (numerator_ * frac.denominator_) + (this->denominator_ * frac.numerator_);
-		zn = (this->denominator_ * frac.denominator_);
-		return ch + zn;
-	}
-
 	bool operator==(Fraction frac)
 	{
-		return AddingFractions(frac) == frac.AddingFractions(frac);
+		bool numerator = numerator_ == frac.numerator_;
+		bool denominator = denominator_ == frac.denominator_;
+		if (numerator == false || denominator == false)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	bool operator!=(Fraction frac)
+	{
+		bool numerator = numerator_ == frac.numerator_;
+		bool denominator = denominator_ == frac.denominator_;
+		if (numerator == false || denominator == false)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	bool operator<(Fraction frac)
+	{
+		bool numerator = numerator_ < frac.numerator_;
+		bool denominator = denominator_ < frac.denominator_;
+		if (numerator == true && denominator == true)
+		{
+			return false;
+		}
+		return true;
 	}
 
 	bool operator>(Fraction frac)
 	{
-		return AddingFractions(frac) > frac.AddingFractions(frac);
+		bool numerator = frac.numerator_ < numerator_;
+		bool denominator = frac.denominator_ < denominator_;
+		if (numerator == true && denominator == true)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	bool operator<=(Fraction frac)
+	{
+		bool numerator = frac.numerator_ < numerator_;
+		bool denominator = frac.denominator_ < denominator_;
+		if (numerator == true && denominator == true)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	bool operator>=(Fraction frac)
+	{
+		bool numerator = numerator_ < frac.numerator_;
+		bool denominator = denominator_ < frac.denominator_;
+		if (numerator == true && denominator == true)
+		{
+			return true;
+		}
+		return false;
 	}
 };
 
@@ -38,10 +86,10 @@ int main()
 	Fraction f2(6, 11);
 
 	std::cout << "f1" << ((f1 == f2) ? " == " : " not == ") << "f2" << '\n';
-	std::cout << "f1" << (!(f1 == f2) ? " != " : " not != ") << "f2" << '\n';
-	std::cout << "f1" << (!(f2 > f1) ? " < " : " not < ") << "f2" << '\n';
-	std::cout << "f1" << (!(f1 > f2) ? " > " : " not > ") << "f2" << '\n';
-	std::cout << "f1" << ((f1 > f2) ? " <= " : " not <= ") << "f2" << '\n';
-	std::cout << "f1" << (!(f1 > f2) ? " >= " : " not >= ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 != f2) ? " != " : " not != ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 < f2) ? " < " : " not < ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 > f2) ? " > " : " not > ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 <= f2) ? " <= " : " not <= ") << "f2" << '\n';
+	std::cout << "f1" << ((f1 >= f2) ? " >= " : " not >= ") << "f2" << '\n';
 	return 0;
 }
