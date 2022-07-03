@@ -1,8 +1,8 @@
 #pragma once
-#ifdef DYNAMICLIBRARY2_EXPORTS
-#define DYNAMICLIBRARY2_API __declspec(dllexport)
+#ifdef DYNAMIC_LIBRARY_2_EXPORTS
+#define DYNAMIC_LIBRARY_2_API __declspec(dllexport)
 #else
-#define DYNAMICLIBRARY2_API __declspec(dllimport)
+#define DYNAMIC_LIBRARY_2_API __declspec(dllimport)
 #endif
 #include <string>
 
