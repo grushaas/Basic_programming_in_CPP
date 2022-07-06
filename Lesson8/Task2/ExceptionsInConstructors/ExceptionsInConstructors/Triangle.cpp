@@ -4,7 +4,7 @@
 
 Triangle::Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Triangle")
 {
-    if (angleA + angleB + angleC != 180) throw Except("ñóììà óãëîâ íå ðàâíà 180");
+    if (angleA + angleB + angleC != 180) throw Except("ÑÑƒÐ¼Ð¼Ð° ÑƒÐ³Ð»Ð¾Ð² Ð½Ðµ Ñ€Ð°Ð²Ð½Ð° 180");
 
     this->sideA = sideA;
     this->sideB = sideB;
