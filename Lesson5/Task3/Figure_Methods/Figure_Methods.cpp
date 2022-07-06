@@ -3,7 +3,7 @@
 
 class Figure {
 public:
-	virtual void print() {
+	void print() {
 		std::cout << name << ":" << std::endl;
 		if (check()) {
 			std::cout << "Correct" << std::endl;
@@ -60,10 +60,7 @@ public:
 		this->sides = sides;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -92,10 +89,7 @@ public:
 		angleC = 90;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -119,10 +113,7 @@ public:
 		angleC = angleA;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -149,10 +140,7 @@ public:
 		angleC = 60;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -184,10 +172,7 @@ public:
 		this->sides = sides;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -219,10 +204,7 @@ public:
 		angleD = angleB;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -257,10 +239,7 @@ public:
 		angleD = angleB;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -297,10 +276,7 @@ public:
 		angleD = 90;
 	}
 
-	void print() override
-	{
-		Figure::print();
-	}
+	void print();
 
 protected:
 	bool check() override {
@@ -337,7 +313,7 @@ public:
 		angleD = 90;
 	}
 
-	void Figure::print();
+	void print();
 
 protected:
 	bool check() override {
