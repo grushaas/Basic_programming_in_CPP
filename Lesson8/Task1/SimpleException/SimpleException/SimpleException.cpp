@@ -1,16 +1,14 @@
 ﻿#include <iostream>
 #include <string>
+#include "Exception.h"
 
-class ForbiddenWordLength : public std::exception
+int verification(std::string str, int forbiddenLength)
 {
-public:
-	
-	const char* what() const override { return "Запретная длина слова"; }
-};
-
-int function(std::string str, int forbiddenLength)
-{
-	if (str.length() == forbiddenLength) throw ForbiddenWordLength();
+	if (str.length() == forbiddenLength)
+	{
+		std::string message = "Encoutered a word " + str + " with forbidden length = " + std::to_string(forbiddenLength);
+		throw ForbiddenWordLength(message);
+	}
 	return str.length();
 }
 
@@ -29,18 +27,16 @@ int main()
 		std::cin >> str;
 		try
 		{
-			std::cout << "Длина слова " << str << " равна " << function(str, forbiddenLength) << std::endl;
+			std::cout << "Длина слова " << str << " равна " << verification(str, forbiddenLength) << std::endl;
 		}
 		catch (const ForbiddenWordLength& forbidden)
 		{
-			std::cout << forbidden.what() << "\nДлина слова равна - " << forbiddenLength << " Значение слова - " << str << std::endl;
+			std::cout << forbidden.what() << std::endl;
 		}
 		catch (...)
 		{
 			std::cout << "Неизвестная ошибка" << std::endl;
 		}
 	}
-
-
 	return 0;
 }

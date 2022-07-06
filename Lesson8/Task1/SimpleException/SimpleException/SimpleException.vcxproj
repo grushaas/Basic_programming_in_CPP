@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Exception.cpp" />
     <ClCompile Include="SimpleException.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Exception.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
