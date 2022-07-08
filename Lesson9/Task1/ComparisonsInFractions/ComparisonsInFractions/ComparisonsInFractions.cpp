@@ -15,68 +15,32 @@ public:
 
 	bool operator==(Fraction frac)
 	{
-		bool numerator = numerator_ == frac.numerator_;
-		bool denominator = denominator_ == frac.denominator_;
-		if (numerator == false || denominator == false)
-		{
-			return false;
-		}
-		return true;
+		return numerator_ == frac.numerator_ && denominator_ == frac.denominator_;
 	}
 
 	bool operator!=(Fraction frac)
 	{
-		bool numerator = numerator_ == frac.numerator_;
-		bool denominator = denominator_ == frac.denominator_;
-		if (numerator == false || denominator == false)
-		{
-			return true;
-		}
-		return false;
+		return !(numerator_ == frac.numerator_ && denominator_ == frac.denominator_);
 	}
 
 	bool operator<(Fraction frac)
 	{
-		bool numerator = numerator_ < frac.numerator_;
-		bool denominator = denominator_ < frac.denominator_;
-		if (numerator == true && denominator == true)
-		{
-			return false;
-		}
-		return true;
+		return (numerator_ < frac.numerator_) && (denominator_ < frac.denominator_);
 	}
 
 	bool operator>(Fraction frac)
 	{
-		bool numerator = frac.numerator_ < numerator_;
-		bool denominator = frac.denominator_ < denominator_;
-		if (numerator == true && denominator == true)
-		{
-			return false;
-		}
-		return true;
+		return (frac.numerator_ < numerator_) && (frac.denominator_ < denominator_);
 	}
 
 	bool operator<=(Fraction frac)
 	{
-		bool numerator = frac.numerator_ < numerator_;
-		bool denominator = frac.denominator_ < denominator_;
-		if (numerator == true && denominator == true)
-		{
-			return true;
-		}
-		return false;
+		return !((frac.numerator_ < numerator_) && (frac.denominator_ < denominator_));
 	}
 
 	bool operator>=(Fraction frac)
 	{
-		bool numerator = numerator_ < frac.numerator_;
-		bool denominator = denominator_ < frac.denominator_;
-		if (numerator == true && denominator == true)
-		{
-			return true;
-		}
-		return false;
+		return !((numerator_ < frac.numerator_) && (denominator_ < frac.denominator_));
 	}
 };
 
