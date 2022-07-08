@@ -60,8 +60,6 @@ public:
 		this->sides = sides;
 	}
 
-	void print();
-
 protected:
 	bool check() override {
 		int answer = angleA + angleB + angleC;
@@ -89,8 +87,6 @@ public:
 		angleC = 90;
 	}
 
-	void print();
-
 protected:
 	bool check() override {
 		return Triangle::check() && angleC == 90;
@@ -112,8 +108,6 @@ public:
 
 		angleC = angleA;
 	}
-
-	void print();
 
 protected:
 	bool check() override {
@@ -139,8 +133,6 @@ public:
 		angleB = 60;
 		angleC = 60;
 	}
-
-	void print();
 
 protected:
 	bool check() override {
@@ -172,8 +164,6 @@ public:
 		this->sides = sides;
 	}
 
-	void print();
-
 protected:
 	bool check() override {
 		int answer = angleA + angleB + angleC + angleD;
@@ -203,8 +193,6 @@ public:
 		angleC = angleA;
 		angleD = angleB;
 	}
-
-	void print();
 
 protected:
 	bool check() override {
@@ -238,8 +226,6 @@ public:
 		angleC = angleA;
 		angleD = angleB;
 	}
-
-	void print();
 
 protected:
 	bool check() override {
@@ -276,8 +262,6 @@ public:
 		angleD = 90;
 	}
 
-	void print();
-
 protected:
 	bool check() override {
 		if (sideA == sideC && sideB == sideD) {
@@ -312,8 +296,6 @@ public:
 		angleC = 90;
 		angleD = 90;
 	}
-
-	void print();
 
 protected:
 	bool check() override {
