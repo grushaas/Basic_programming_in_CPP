@@ -8,8 +8,8 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	string name;
 
-	cout << "Ââåäèòå èìÿ: ";
+	cout << "Â¬Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Â¤: ";
 	cin >> name;
 
-	cout << "Çäðàâñòâóéòå, " << name << endl;
+	cout << "Â«Ð´Ñ€Ð°Ð²ÑÑ‚Ð²ÑƒÐ¹Ñ‚Ðµ, " << name << endl;
 }
