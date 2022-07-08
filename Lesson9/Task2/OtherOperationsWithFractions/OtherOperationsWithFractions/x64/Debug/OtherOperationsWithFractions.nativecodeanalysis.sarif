@@ -1,0 +1,43 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.32.31329.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/my folder/netology/homework/basic programming for cpp/lessons/lesson9/task2/otheroperationswithfractions/otheroperationswithfractions/otheroperationswithfractions.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "6bb1ede026f0e186022f3ef40b6ad27b1815efc1dcfe2d3d16482a207c5d2661"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/my folder/netology/homework/basic programming for cpp/lessons/lesson9/task2/otheroperationswithfractions/otheroperationswithfractions/except.h"
+          },
+          "hashes": {
+            "sha-256": "8517ac5a8e8039b34593299e9febe6779c9708745d16ec652685280f416b5bde"
+          }
+        }
+      ]
+    }
+  ]
+}

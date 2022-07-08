@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Except.cpp" />
     <ClCompile Include="OtherOperationsWithFractions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Except.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
