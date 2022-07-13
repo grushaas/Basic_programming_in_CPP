@@ -2,27 +2,17 @@
 #include "Exception.h"
 #include <iostream>
 
-Rhombus::Rhombus(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Rhombus")
+Rhombus::Rhombus(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral)
 {
-    if (sideA != sideB) throw Except("Стороны A и B не равны");
-    if (sideA != sideC) throw Except("Стороны A и C не равны");
-    if (sideA != sideD) throw Except("Стороны A и D не равны");
-    if (sideB != sideC) throw Except("Стороны B и C не равны");
-    if (sideB != sideD) throw Except("Стороны B и D не равны");
-    if (sideC != sideD) throw Except("Стороны C и D не равны");
-    if (angleA != angleC) throw Except("Углы A и C не равны");
-    if (angleB != angleD) throw Except("Углы B и D не равны");
-    if (angleA + angleB + angleC + angleD != 360) throw Except("Сумма углов не рав 360 градусов");
-
-    this->sideA = sideA;
-    this->sideB = sideB;
-    this->sideC = sideC;
-    this->sideD = sideD;
-
-    this->angleA = angleA;
-    this->angleB = angleB;
-    this->angleC = angleC;
-    this->angleD = angleD;
+    if (sideA != sideB) throw Except("РЎС‚РѕСЂРѕРЅС‹ A Рё B РЅРµ СЂР°РІРЅС‹");
+    if (sideA != sideC) throw Except("РЎС‚РѕСЂРѕРЅС‹ A Рё C РЅРµ СЂР°РІРЅС‹");
+    if (sideA != sideD) throw Except("РЎС‚РѕСЂРѕРЅС‹ A Рё D РЅРµ СЂР°РІРЅС‹");
+    if (sideB != sideC) throw Except("РЎС‚РѕСЂРѕРЅС‹ B Рё C РЅРµ СЂР°РІРЅС‹");
+    if (sideB != sideD) throw Except("РЎС‚РѕСЂРѕРЅС‹ B Рё D РЅРµ СЂР°РІРЅС‹");
+    if (sideC != sideD) throw Except("РЎС‚РѕСЂРѕРЅС‹ C Рё D РЅРµ СЂР°РІРЅС‹");
+    if (angleA != angleC) throw Except("РЈРіР»С‹ A Рё C РЅРµ СЂР°РІРЅС‹");
+    if (angleB != angleD) throw Except("РЈРіР»С‹ B Рё D РЅРµ СЂР°РІРЅС‹");
+    if (angleA + angleB + angleC + angleD != 360) throw Except("РЎСѓРјРјР° СѓРіР»РѕРІ РЅРµ СЂР°РІ 360 РіСЂР°РґСѓСЃРѕРІ");
 }
 
 void Rhombus::print_sides()

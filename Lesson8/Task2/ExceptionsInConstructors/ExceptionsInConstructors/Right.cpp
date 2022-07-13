@@ -1,18 +1,12 @@
 #include "Right.h"
 #include "Exception.h"
+#include <string>
 #include <iostream>
 
-Right::Right(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Right Triangle")
+Right::Right(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle)
 {
-    if (angleC != 90) throw Except("”„ÓÎ C ÌÂ ‡‚ÂÌ 90 „‡‰ÛÒÓ‚");
-    if (angleA + angleB + angleC != 180) throw Except("—ÛÏÏ‡ Û„ÎÓ‚ ÌÂ ‡‚Ì‡ 180 „‡‰ÛÒÓ‚");
-    this->sideA = sideA;
-    this->sideB = sideB;
-    this->sideC = sideC;
-
-    this->angleA = angleA;
-    this->angleB = angleB;
-    this->angleC = angleC;
+    if (angleC != 90) throw Except("–£–≥–æ–ª C –Ω–µ —Ä–∞–≤–µ–Ω 90 –≥—Ä–∞–¥—É—Å–æ–≤");
+    if (angleA + angleB + angleC != 180) throw Except("–°—É–º–º–∞ —É–≥–ª–æ–≤ –Ω–µ —Ä–∞–≤–Ω–∞ 180 –≥—Ä–∞–¥—É—Å–æ–≤");
 }
 
 void Right::print_sides()

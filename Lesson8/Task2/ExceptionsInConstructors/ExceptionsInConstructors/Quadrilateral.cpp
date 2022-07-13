@@ -2,9 +2,9 @@
 #include "Exception.h"
 #include <iostream>
 
-Quadrilateral::Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Quadrilateral")
+Quadrilateral::Quadrilateral(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrilateral) : Figure(nameQuadrilateral)
 {
-    if (angleA + angleB + angleC + angleD != 360) throw Except("Ñóììà óãëîâ íå ðàâåí 360 ãðàäóñîâ");
+    if (angleA + angleB + angleC + angleD != 360) throw Except("â€”ÑƒÐ¼Ð¼Ð° ÑƒÐ³Ð»Ð¾Ð² Ð½Ðµ Ñ€Ð°Ð²ÐµÐ½ 360 Ð³Ñ€Ð°Ð´ÑƒÑÐ¾Ð²");
 
     this->sideA = sideA;
     this->sideB = sideB;

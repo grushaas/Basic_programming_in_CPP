@@ -1,17 +1,13 @@
 #pragma once
-#include "Figure.h"
+#include "Quadrilateral.h"
 
-class Parallelogram : public Figure
+class Parallelogram : public Quadrilateral
 {
 public:
-	Parallelogram(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD);
+	Parallelogram(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrialteral);
 
 protected:
-	void print_sides();
+	void print_sides() override;
 
-	void print_angles();
-
-private:
-	int sideA, sideB, sideC, sideD;
-	int angleA, angleB, angleC, angleD;
+	void print_angles() override;
 };

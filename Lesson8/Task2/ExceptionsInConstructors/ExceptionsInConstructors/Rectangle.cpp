@@ -2,25 +2,15 @@
 #include "Exception.h"
 #include <iostream>
 
-Rectangle::Rectangle(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Rectangle")
+Rectangle::Rectangle(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrilateral) : Parallelogram(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral)
 {
-    if (sideA != sideC) throw Except("—ÚÓÓÌ˚ A Ë C ÌÂ ‡‚Ì˚");
-    if (sideB != sideD) throw Except("—ÚÓÓÌ˚ B Ë D ÌÂ ‡‚Ì˚");
-    if (angleA != 90) throw Except("”„ÓÎ A ÌÂ ‡‚ÂÌ 90 „‡‰ÛÒÓ‚");
-    if (angleB != 90) throw Except("”„ÓÎ B ÌÂ ‡‚ÂÌ 90 „‡‰ÛÒÓ‚");
-    if (angleC != 90) throw Except("”„ÓÎ C ÌÂ ‡‚ÂÌ 90 „‡‰ÛÒÓ‚");
-    if (angleD != 90) throw Except("”„ÓÎ D ÌÂ ‡‚ÂÌ 90 „‡‰ÛÒÓ‚");
-    if (angleA + angleB + angleC + angleD != 360) throw Except("—ÛÏÏ‡ Û„ÎÓ‚ ÌÂ ‡‚ 360 „‡‰ÛÒÓ‚");
-
-    this->sideA = sideA;
-    this->sideB = sideB;
-    this->sideC = sideC;
-    this->sideD = sideD;
-
-    this->angleA = angleA;
-    this->angleB = angleB;
-    this->angleC = angleC;
-    this->angleD = angleD;
+    if (sideA != sideC) throw Except("–°—Ç–æ—Ä–æ–Ω—ã A –∏ C –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (sideB != sideD) throw Except("–°—Ç–æ—Ä–æ–Ω—ã B –∏ D –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleA != 90) throw Except("–£–≥–æ–ª A –Ω–µ —Ä–∞–≤–µ–Ω 90 –≥—Ä–∞–¥—É—Å–æ–≤");
+    if (angleB != 90) throw Except("–£–≥–æ–ª B –Ω–µ —Ä–∞–≤–µ–Ω 90 –≥—Ä–∞–¥—É—Å–æ–≤");
+    if (angleC != 90) throw Except("–£–≥–æ–ª C –Ω–µ —Ä–∞–≤–µ–Ω 90 –≥—Ä–∞–¥—É—Å–æ–≤");
+    if (angleD != 90) throw Except("–£–≥–æ–ª D –Ω–µ —Ä–∞–≤–µ–Ω 90 –≥—Ä–∞–¥—É—Å–æ–≤");
+    if (angleA + angleB + angleC + angleD != 360) throw Except("–°—É–º–º–∞ —É–≥–ª–æ–≤ –Ω–µ —Ä–∞–≤ 360 –≥—Ä–∞–¥—É—Å–æ–≤");
 }
 
 void Rectangle::print_sides()

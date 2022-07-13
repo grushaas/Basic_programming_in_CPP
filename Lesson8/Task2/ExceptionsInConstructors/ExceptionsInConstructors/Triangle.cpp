@@ -2,7 +2,7 @@
 #include "Exception.h"
 #include <iostream>
 
-Triangle::Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Triangle")
+Triangle::Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle) : Figure(nameTriangle)
 {
     if (angleA + angleB + angleC != 180) throw Except("сумма углов не равна 180");
 

@@ -1,17 +1,14 @@
 #pragma once
-#include "Figure.h"
+#include "Isosceles.h"
+#include <string>
 
-class Equilateral : public Figure
+class Equilateral : public Isosceles
 {
 public:
-	Equilateral(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC);
+	Equilateral(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle);
 
 protected:
-	void print_sides();
+	void print_sides() override;
 
-	void print_angles();
-
-private:
-	int sideA, sideB, sideC;
-	int angleA, angleB, angleC;
+	void print_angles() override;
 };

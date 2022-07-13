@@ -1,10 +1,2 @@
-﻿  ExceptionsInConstructors.cpp
-  Isosceles.cpp
-  Parallelogram.cpp
-  Quadrilateral.cpp
-  Rectangle.cpp
-  Rhombus.cpp
-  Right.cpp
-  Square.cpp
-  Создание кода...
+﻿  Square.cpp
   ExceptionsInConstructors.vcxproj -> C:\My folder\Netology\Homework\basic programming for cpp\Lessons\Lesson8\Task2\ExceptionsInConstructors\x64\Debug\ExceptionsInConstructors.exe

@@ -1,20 +1,13 @@
 #include "Isosceles.h"
 #include "Exception.h"
+#include <string>
 #include <iostream>
 
-Isosceles::Isosceles(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Isosceles Triangle")
+Isosceles::Isosceles(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle) : Triangle(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle)
 {
-    if (sideA != sideC) throw Except("—ÚÓÓÌ˚ A Ë B ÌÂ ‡‚Ì˚");
-    if (angleA != angleC) throw Except("”„Î˚ A Ë B ÌÂ ‡‚Ì˚");
-    if (angleA + angleB + angleC != 180) throw Except("ÒÛÏÏ‡ Û„ÎÓ‚ ÌÂ ‡‚Ì‡ 180");
-
-    this->sideA = sideA;
-    this->sideB = sideB;
-    this->sideC = sideC;
-
-    this->angleA = angleA;
-    this->angleB = angleB;
-    this->angleC = angleC;
+    if (sideA != sideC) throw Except("–°—Ç–æ—Ä–æ–Ω—ã A –∏ B –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleA != angleC) throw Except("–£–≥–ª—ã A –∏ B –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleA + angleB + angleC != 180) throw Except("—Å—É–º–º–∞ —É–≥–ª–æ–≤ –Ω–µ —Ä–∞–≤–Ω–∞ 180");
 }
 
 void Isosceles::print_sides()

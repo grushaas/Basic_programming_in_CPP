@@ -1,17 +1,17 @@
 #pragma once
+#include <string>
 #include "Figure.h"
 
 class Triangle : public Figure 
 {
 public:
-	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC);
+	Triangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle);
 
 protected:
-	virtual void print_sides();
+	void print_sides() override;
 
-	virtual void print_angles();
+	void print_angles() override;
 
-private:
 	int sideA, sideB, sideC;
 	int angleA, angleB, angleC;
 };

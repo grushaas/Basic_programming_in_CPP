@@ -2,23 +2,13 @@
 #include "Exception.h"
 #include <iostream>
 
-Parallelogram::Parallelogram(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD) : Figure("Parallelogram")
+Parallelogram::Parallelogram(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD, std::string nameQuadrilateral) : Quadrilateral(sideA, sideB, sideC, sideD, angleA, angleB, angleC, angleD, nameQuadrilateral)
 {
-    if (sideA != sideC) throw Except("—ÚÓÓÌ˚ A Ë C ÌÂ ‡‚Ì˚");
-    if (sideB != sideD) throw Except("—ÚÓÓÌ˚ B Ë D ÌÂ ‡‚Ì˚");
-    if (angleA != angleC) throw Except("”„Î˚ A Ë C ÌÂ ‡‚Ì˚");
-    if (angleB != angleD) throw Except("”„Î˚ B Ë D ÌÂ ‡‚Ì˚");
-    if (angleA + angleB + angleC + angleD != 360) throw Except("—ÛÏÏ‡ Û„ÎÓ‚ ÌÂ ‡‚ 360 „‡‰ÛÒÓ‚");
-    
-    this->sideA = sideA;
-    this->sideB = sideB;
-    this->sideC = sideC;
-    this->sideD = sideD;
-
-    this->angleA = angleA;
-    this->angleB = angleB;
-    this->angleC = angleC;
-    this->angleD = angleD;
+    if (sideA != sideC) throw Except("–°—Ç–æ—Ä–æ–Ω—ã A –∏ C –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (sideB != sideD) throw Except("–°—Ç–æ—Ä–æ–Ω—ã B –∏ D –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleA != angleC) throw Except("–£–≥–ª—ã A –∏ C –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleB != angleD) throw Except("–£–≥–ª—ã B –∏ D –Ω–µ —Ä–∞–≤–Ω—ã");
+    if (angleA + angleB + angleC + angleD != 360) throw Except("–°—É–º–º–∞ —É–≥–ª–æ–≤ –Ω–µ —Ä–∞–≤ 360 –≥—Ä–∞–¥—É—Å–æ–≤");
 }
 
 void Parallelogram::print_sides()

@@ -3,28 +3,10 @@
 #include <iostream>
 
 
-Equilateral::Equilateral(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) : Figure("Equilateral Triangle")
+Equilateral::Equilateral(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC, std::string nameTriangle) : Isosceles(sideA, sideB, sideC, angleA, angleB, angleC, nameTriangle)
 {
-    try
-    {
-        this->sideA = sideA;
-        this->sideB = sideB;
-        this->sideC = sideC;
-
-        this->angleA = angleA;
-        this->angleB = angleB;
-        this->angleC = angleC;
-        if (sideA != sideB || sideA != sideC || sideB != sideC) throw Except("Не все стороны равны");
-        if (angleA != 60 || angleB != 60 || angleC != 60) throw Except("какой-то из углов не равен 60");
-    }
-    catch (const Except& ex) 
-    { 
-        std::cout << "Равносторонний треугольник (Стороны: " << sideA << ", " << sideB << ", " << sideC << "; углы " << angleA << ", " << angleB << ", " << angleC << ") не был создан. Причина: " << ex.what() << std::endl;
-    }
-    catch (...) 
-    { 
-        std::cout << "Неизвестная ошибка!" << std::endl;
-    }
+    if (sideA != sideB || sideA != sideC || sideB != sideC) throw Except("РќРµ РІСЃРµ СЃС‚РѕСЂРѕРЅС‹ СЂР°РІРЅС‹");
+    if (angleA != 60 || angleB != 60 || angleC != 60) throw Except("РєР°РєРѕР№-С‚Рѕ РёР· СѓРіР»РѕРІ РЅРµ СЂР°РІРµРЅ 60");
 }
 
 void Equilateral::print_sides()
