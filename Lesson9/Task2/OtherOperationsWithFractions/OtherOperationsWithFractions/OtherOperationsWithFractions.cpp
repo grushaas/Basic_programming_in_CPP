@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <string>
+#include <numeric>
 #include "Except.h"
 
 class Fraction
@@ -8,30 +9,20 @@ private:
 	int numerator_;
 	int denominator_;
 
-	void reduction(int& numerator, int& denominator)
+	void reduction(int& numerator_, int& denominator_)
 	{
-		int nod = 0;
+		int gcd = std::gcd(numerator_, denominator_);
 
-		while (nod != 1)
+		if (gcd != 1)
 		{
-			for (int i = numerator; i > 0; i--)
-			{
-				if (numerator % i == 0 && denominator % i == 0)
-				{
-					nod = i;
-					break;
-				}
-			}
-
-			numerator /= nod;
-			denominator /= nod;
+			numerator_ /= gcd;
+			denominator_ /= gcd;
 		}
 	}
 
 public:
 	Fraction(int numerator, int denominator)
 	{
-		if (numerator == 0 || denominator == 0) throw Division_by_zero_exception("Деление на ноль не возможно");
 		numerator_ = numerator;
 		denominator_ = denominator;
 		
@@ -73,12 +64,15 @@ public:
 	{
 		int numerator = numerator_ * frac.numerator_;
 		int denominator = denominator_ * frac.denominator_;
-		
+
+		reduction(numerator, denominator);
 		return Fraction(numerator, denominator);
 	}
 
 	Fraction operator/(Fraction frac)
 	{
+		if (numerator_ == 0 || denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
+		if(frac.numerator_ == 0 || frac.denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно")
 		int numerator = numerator_ * frac.denominator_;
 		int denominator = denominator_ * frac.numerator_;
 
