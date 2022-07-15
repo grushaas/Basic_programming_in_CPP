@@ -7,23 +7,20 @@ private:
 	int numerator_;
 	int denominator_;
 
-	//int gcd(int a, int b)
-	//{
-	//	return b ? a : gcd(b, a % b);
-	//}
-
-	void reduction(int& numerator_, int& denominator_, Fraction& frac)
+	int lcm(int denominator1, int denominator2)
 	{
-		int lcd = std::gcd(3, 11);
+		return std::gcd(denominator1, denominator2) * denominator1 * denominator2;
+	}
 
-		int multiplier1 = lcd / denominator_;
-		int multiplier2 = lcd / frac.denominator_;
+	void reduction(int& numerator_, int& denominator_)
+	{
+		int gcd = std::gcd(numerator_, denominator_);
 
-		numerator_ *= multiplier1;
-		denominator_ *= multiplier1;
-
-		frac.numerator_ *= multiplier2;
-		frac.denominator_ *= multiplier2;
+		if (gcd != 1)
+		{
+			numerator_ /= gcd;
+			denominator_ /= gcd;
+		}
 	}
 
 public:
@@ -31,6 +28,8 @@ public:
 	{
 		numerator_ = numerator;
 		denominator_ = denominator;
+
+		reduction(numerator_, denominator_);
 	}
 
 	bool operator==(Fraction frac)
@@ -45,24 +44,29 @@ public:
 
 	bool operator<(Fraction frac)
 	{
-		reduction(numerator_, denominator_, frac);
-
-		return (numerator_ < frac.numerator_) && (denominator_ < denominator_);
+		return *this != frac && !(*this > frac);
 	}
 
 	bool operator>(Fraction frac)
 	{
-		return (frac.numerator_ < numerator_) && (frac.denominator_ < denominator_);
+		int lcmd = lcm(denominator_, frac.denominator_);
+		int multiplier1 = lcmd / denominator_;
+		int multiplier2 = lcmd / frac.denominator_;
+
+		numerator_ *= multiplier1;
+		frac.numerator_ *= multiplier2;
+
+		return numerator_ > frac.numerator_;
 	}
 
 	bool operator<=(Fraction frac)
 	{
-		return !((frac.numerator_ < numerator_) && (frac.denominator_ < denominator_));
+		return *this == frac || !(*this > frac);
 	}
 
 	bool operator>=(Fraction frac)
 	{
-		return !((numerator_ < frac.numerator_) && (denominator_ < frac.denominator_));
+		return *this == frac || (frac < *this);
 	}
 };
 
