@@ -7,7 +7,6 @@ Isosceles::Isosceles(int sideA, int sideB, int sideC, int angleA, int angleB, in
 {
     if (sideA != sideC) throw Except("Стороны A и B не равны");
     if (angleA != angleC) throw Except("Углы A и B не равны");
-    if (angleA + angleB + angleC != 180) throw Except("сумма углов не равна 180");
 }
 
 void Isosceles::print_sides()

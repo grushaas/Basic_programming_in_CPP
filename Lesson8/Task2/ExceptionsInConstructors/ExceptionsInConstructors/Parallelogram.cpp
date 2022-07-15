@@ -8,7 +8,6 @@ Parallelogram::Parallelogram(int sideA, int sideB, int sideC, int sideD, int ang
     if (sideB != sideD) throw Except("Стороны B и D не равны");
     if (angleA != angleC) throw Except("Углы A и C не равны");
     if (angleB != angleD) throw Except("Углы B и D не равны");
-    if (angleA + angleB + angleC + angleD != 360) throw Except("Сумма углов не рав 360 градусов");
 }
 
 void Parallelogram::print_sides()
