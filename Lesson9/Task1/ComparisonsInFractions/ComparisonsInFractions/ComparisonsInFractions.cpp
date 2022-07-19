@@ -7,20 +7,12 @@ private:
 	int numerator_;
 	int denominator_;
 
-	int lcm(int denominator1, int denominator2)
-	{
-		return std::gcd(denominator1, denominator2) * denominator1 * denominator2;
-	}
-
 	void reduction(int& numerator_, int& denominator_)
 	{
 		int gcd = std::gcd(numerator_, denominator_);
 
-		if (gcd != 1)
-		{
-			numerator_ /= gcd;
-			denominator_ /= gcd;
-		}
+		numerator_ /= gcd;
+		denominator_ /= gcd;
 	}
 
 public:
@@ -49,14 +41,7 @@ public:
 
 	bool operator>(Fraction frac)
 	{
-		int lcmd = lcm(denominator_, frac.denominator_);
-		int multiplier1 = lcmd / denominator_;
-		int multiplier2 = lcmd / frac.denominator_;
-
-		numerator_ *= multiplier1;
-		frac.numerator_ *= multiplier2;
-
-		return numerator_ > frac.numerator_;
+		return numerator_ * frac.denominator_ > frac.numerator_ * denominator_;
 	}
 
 	bool operator<=(Fraction frac)
