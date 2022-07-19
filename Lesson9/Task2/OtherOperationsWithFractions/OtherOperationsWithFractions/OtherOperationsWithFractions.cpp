@@ -13,11 +13,8 @@ private:
 	{
 		int gcd = std::gcd(numerator_, denominator_);
 
-		if (gcd != 1)
-		{
-			numerator_ /= gcd;
-			denominator_ /= gcd;
-		}
+		numerator_ /= gcd;
+		denominator_ /= gcd;
 	}
 
 public:
@@ -25,6 +22,8 @@ public:
 	{
 		numerator_ = numerator;
 		denominator_ = denominator;
+
+		reduction(numerator_, denominator_);
 		
 	}
 
@@ -33,15 +32,22 @@ public:
 		if (denominator_ == frac.denominator_)
 		{
 			int numerator = numerator_ + frac.numerator_;
+
+			reduction(numerator, denominator_);
 			return Fraction(numerator, denominator_);
 		}
 
-		int stn = denominator_ * frac.denominator_;
-		int numerator1 = frac.denominator_ * numerator_;
-		int numerator2 = denominator_ * frac.numerator_;
+		int lcm = std::gcd(denominator_, frac.denominator_) * denominator_ * frac.denominator_;
+
+		int multiplier1 = lcm / denominator_;
+		int multiplier2 = lcm / frac.denominator_;
+
+		int numerator1 = numerator_ * multiplier1;
+		int numerator2 = frac.numerator_ * multiplier2;
+
 		int numerator = numerator1 + numerator2;
-		
-		return Fraction(numerator, stn);
+		reduction(numerator, lcm);
+		return Fraction(numerator, lcm);
 	}
 
 	Fraction operator-(Fraction frac)
@@ -49,15 +55,23 @@ public:
 		if (denominator_ == frac.denominator_)
 		{
 			int numerator = numerator_ - frac.numerator_;
+
+			reduction(numerator, denominator_);
 			return Fraction(numerator, denominator_);
 		}
 
-		int stn = denominator_ * frac.denominator_;
-		int numerator1 = frac.denominator_ * numerator_;
-		int numerator2 = denominator_ * frac.numerator_;
+		int lcm = std::gcd(denominator_, frac.denominator_) * denominator_ * frac.denominator_;
+
+		int multiplier1 = lcm / denominator_;
+		int multiplier2 = lcm / frac.denominator_;
+
+		int numerator1 = numerator_ * multiplier1;
+		int numerator2 = frac.numerator_ * multiplier2;
+
 		int numerator = numerator1 - numerator2;
 
-		return Fraction(numerator, stn);
+		reduction(numerator, lcm);
+		return Fraction(numerator, lcm);
 	}
 
 	Fraction operator*(Fraction frac)
@@ -72,7 +86,7 @@ public:
 	Fraction operator/(Fraction frac)
 	{
 		if (numerator_ == 0 || denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
-		if(frac.numerator_ == 0 || frac.denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно")
+		if (frac.numerator_ == 0 || frac.denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
 		int numerator = numerator_ * frac.denominator_;
 		int denominator = denominator_ * frac.numerator_;
 
@@ -95,7 +109,7 @@ public:
 		return *this;
 	}
 
-	Fraction operator++(int)
+	Fraction operator++(int) //Постфикс
 	{
 		Fraction tmp = *this;
 		++(*this);
@@ -109,7 +123,7 @@ public:
 		return *this;
 	}
 
-	Fraction operator--(int)
+	Fraction operator--(int) //Постфикс
 	{
 		Fraction tmp = *this;
 		--(*this);
@@ -152,14 +166,22 @@ int main()
 		Fraction divide = f1 / f2;
 		Fraction minusf1 = -f1;
 		Fraction minusf2 = -f2;
-		Fraction f1_pre = ++f1 * f2;
-		Fraction f2_pre = f1 * ++f2;
-		Fraction f1_post = f1++ * f2;
-		Fraction f2_post = f1 * f2++;
-		Fraction f1_pre_min = --f1 * f2;
-		Fraction f2_pre_min = f1 * --f2;
-		Fraction f1_post_min = f1-- * f2;
-		Fraction f2_post_min = f1 * f2--;
+		Fraction f1_pre = ++f1;
+		Fraction f1_post = f1++;
+		Fraction f2_pre = ++f2;
+		Fraction f2_post = f2++;
+		Fraction f1_pre_min = --f1;
+		Fraction f1_post_min = f1--;
+		Fraction f2_pre_min = --f2;
+		Fraction f2_post_min = f2--;
+		Fraction f1_pre_multi = ++f1 * f2;
+		Fraction f2_pre_multi = f1 * ++f2;
+		Fraction f1_post_multi = f1++ * f2;
+		Fraction f2_post_multi = f1 * f2++;
+		Fraction f1_pre_min_multi = --f1 * f2;
+		Fraction f2_pre_min_multi = f1 * --f2;
+		Fraction f1_post_min_multi = f1-- * f2;
+		Fraction f2_post_min_multi = f1 * f2--;
 
 		std::cout << numerator1 << "/" << denominator1 << " + " << numerator2 << "/" << denominator2 << " = ";
 		add.print();
@@ -180,16 +202,16 @@ int main()
 		minusf2.print();
 
 		std::cout << "++" << numerator1 << "/" << denominator1 << " * " << numerator2 << "/" << denominator2 << " = ";
+		f1_pre_multi.print();
+
+		std::cout << "Значение дроби 1: ";
 		f1_pre.print();
 
-		std::cout << "Значение дроби 1: ";
-		f1.print();
-
 		std::cout << numerator1 << "/" << denominator1 << "--" << " * " << numerator2 << "/" << denominator2 << " = ";
-		f1_post_min.print();
+		f1_post_min_multi.print();
 
 		std::cout << "Значение дроби 1: ";
-		f1.print();
+		f1_post_min.print();
 	}
 	catch (const Division_by_zero_exception& ex) { std::cout << ex.what() << std::endl; }
 	catch (...) { std::cout << "Неизвестная ошибка" << std::endl; }
