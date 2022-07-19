@@ -11,5 +11,5 @@ int main()
 	cout << "Введите имя: ";
 	cin >> name;
 
-	cout << "«Здравствуйте, " << name << endl;
+	cout << "Здравствуйте, " << name << endl;
 }
