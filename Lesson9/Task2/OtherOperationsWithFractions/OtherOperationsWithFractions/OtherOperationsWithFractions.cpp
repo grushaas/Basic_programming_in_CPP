@@ -29,49 +29,16 @@ public:
 
 	Fraction operator+(Fraction frac)
 	{
-		if (denominator_ == frac.denominator_)
-		{
-			int numerator = numerator_ + frac.numerator_;
-
-			reduction(numerator, denominator_);
-			return Fraction(numerator, denominator_);
-		}
-
-		int lcm = std::gcd(denominator_, frac.denominator_) * denominator_ * frac.denominator_;
-
-		int multiplier1 = lcm / denominator_;
-		int multiplier2 = lcm / frac.denominator_;
-
-		int numerator1 = numerator_ * multiplier1;
-		int numerator2 = frac.numerator_ * multiplier2;
-
-		int numerator = numerator1 + numerator2;
-		reduction(numerator, lcm);
-		return Fraction(numerator, lcm);
+		int numerator = numerator_ * frac.denominator_ + frac.numerator_ * denominator_;
+		int denominator = denominator_ * frac.denominator_;
+		return Fraction(numerator, denominator);
 	}
 
 	Fraction operator-(Fraction frac)
 	{
-		if (denominator_ == frac.denominator_)
-		{
-			int numerator = numerator_ - frac.numerator_;
-
-			reduction(numerator, denominator_);
-			return Fraction(numerator, denominator_);
-		}
-
-		int lcm = std::gcd(denominator_, frac.denominator_) * denominator_ * frac.denominator_;
-
-		int multiplier1 = lcm / denominator_;
-		int multiplier2 = lcm / frac.denominator_;
-
-		int numerator1 = numerator_ * multiplier1;
-		int numerator2 = frac.numerator_ * multiplier2;
-
-		int numerator = numerator1 - numerator2;
-
-		reduction(numerator, lcm);
-		return Fraction(numerator, lcm);
+		int numerator = numerator_ * frac.denominator_ - frac.numerator_ * denominator_;
+		int denominator = denominator_ * frac.denominator_;
+		return Fraction(numerator, denominator);
 	}
 
 	Fraction operator*(Fraction frac)
@@ -79,7 +46,6 @@ public:
 		int numerator = numerator_ * frac.numerator_;
 		int denominator = denominator_ * frac.denominator_;
 
-		reduction(numerator, denominator);
 		return Fraction(numerator, denominator);
 	}
 
@@ -90,7 +56,6 @@ public:
 		int numerator = numerator_ * frac.denominator_;
 		int denominator = denominator_ * frac.numerator_;
 
-		reduction(numerator, denominator);
 		return Fraction(numerator, denominator);
 	}
 
@@ -104,8 +69,7 @@ public:
 
 	Fraction& operator++()
 	{
-		numerator_++;
-		denominator_++;
+		*this = *this + Fraction(1, 1);
 		return *this;
 	}
 
@@ -118,8 +82,7 @@ public:
 
 	Fraction& operator--()
 	{
-		numerator_--;
-		denominator_--;
+		*this = *this - Fraction(1, 1);
 		return *this;
 	}
 
