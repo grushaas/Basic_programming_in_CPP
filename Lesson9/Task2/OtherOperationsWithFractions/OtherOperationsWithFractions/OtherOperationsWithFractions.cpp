@@ -36,9 +36,7 @@ public:
 
 	Fraction operator-(Fraction frac)
 	{
-		int numerator = numerator_ * frac.denominator_ - frac.numerator_ * denominator_;
-		int denominator = denominator_ * frac.denominator_;
-		return Fraction(numerator, denominator);
+		return *this + (-frac);
 	}
 
 	Fraction operator*(Fraction frac)
@@ -53,18 +51,19 @@ public:
 	{
 		if (numerator_ == 0 || denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
 		if (frac.numerator_ == 0 || frac.denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
-		int numerator = numerator_ * frac.denominator_;
-		int denominator = denominator_ * frac.numerator_;
+		int a = numerator_;
+		int b = denominator_;
+		int c = frac.numerator_;
+		int d = frac.denominator_;
 
-		return Fraction(numerator, denominator);
+		Fraction result(a * d, b * c);
+
+		return result;
 	}
 
 	Fraction operator-()
 	{
-		Fraction negated = *this;
-		negated.numerator_ *= -1;
-
-		return negated;
+		return Fraction(-numerator_, -denominator_);
 	}
 
 	Fraction& operator++()
