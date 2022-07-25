@@ -23,8 +23,9 @@ public:
 		numerator_ = numerator;
 		denominator_ = denominator;
 
+		if (denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно. Замените пожалуйста дробь!");
+
 		reduction(numerator_, denominator_);
-		
 	}
 
 	Fraction operator+(Fraction frac)
@@ -49,8 +50,6 @@ public:
 
 	Fraction operator/(Fraction frac)
 	{
-		if (numerator_ == 0 || denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
-		if (frac.numerator_ == 0 || frac.denominator_ == 0) throw Division_by_zero_exception("Деление на ноль невозможно");
 		int a = numerator_;
 		int b = denominator_;
 		int c = frac.numerator_;
@@ -63,7 +62,7 @@ public:
 
 	Fraction operator-()
 	{
-		return Fraction(-numerator_, -denominator_);
+		return Fraction(-numerator_, denominator_);
 	}
 
 	Fraction& operator++()
