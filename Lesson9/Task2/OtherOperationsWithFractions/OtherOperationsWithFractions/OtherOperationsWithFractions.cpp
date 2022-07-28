@@ -50,19 +50,13 @@ public:
 
 	Fraction operator/(Fraction frac)
 	{
-		int a = numerator_;
-		int b = denominator_;
-		int c = frac.numerator_;
-		int d = frac.denominator_;
-
-		Fraction result(a * d, b * c);
-
-		return result;
+		Fraction u(frac.denominator_, frac.numerator_);
+		return *this * u;
 	}
 
 	Fraction operator-()
 	{
-		return Fraction(-numerator_, denominator_);
+		return *this * Fraction(-1, 1);
 	}
 
 	Fraction& operator++()
