@@ -1,3 +1,4 @@
 #include "Camel.h"
 
-Camel::Camel(int type, int speed, int driving_time, int duration, std::string nameTV) : type(type), speed(speed), driving_time(driving_time), duration(duration), nameTV(nameTV){}
+Camel::Camel(int speed, int dtbr, int duration, std::string name_transport)
+	: Ground_transport(speed, dtbr, duration, name_transport) {}

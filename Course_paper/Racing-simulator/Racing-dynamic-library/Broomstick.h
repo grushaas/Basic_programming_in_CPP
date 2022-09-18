@@ -1,8 +1,8 @@
 #pragma once
-#include "Magic-carpet.h"
+#include "Air-transport.h"
 
-class Broomstick : public Magic_carpet
+class Broomstick : public Air_transport
 {
 public:
-	Broomstick(int type, int speed, std::string nameTV);
+	Broomstick(int speed, std::string name_transport);
 };

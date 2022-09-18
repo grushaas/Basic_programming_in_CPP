@@ -1,8 +1,8 @@
 #pragma once
-#include "Magic-carpet.h"
+#include "Air-transport.h"
 
-class Eagle : public Magic_carpet
+class Eagle : public Air_transport
 {
 public:
-	Eagle(int type, int speed, std::string nameTV);
+	Eagle(int speed, std::string name_transport);
 };

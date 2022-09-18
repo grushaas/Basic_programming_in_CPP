@@ -1,13 +1,8 @@
 #pragma once
-#include <string>
+#include "Air-transport.h"
 
-class Magic_carpet
+class Magic_carpet : public Air_transport
 {
-protected:
-	int type;
-	int speed;
-	std::string nameTV;
-
 public:
-	Magic_carpet(int type, int speed, std::string nameTV);
+	Magic_carpet(int speed, std::string name_transport);
 };

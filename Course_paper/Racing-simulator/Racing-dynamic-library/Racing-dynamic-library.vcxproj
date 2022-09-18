@@ -131,24 +131,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Air-transport.cpp" />
     <ClCompile Include="All-terrain-boots.cpp" />
     <ClCompile Include="Broomstick.cpp" />
     <ClCompile Include="Camel-fast.cpp" />
     <ClCompile Include="Camel.cpp" />
     <ClCompile Include="Centaur.cpp" />
     <ClCompile Include="Eagle.cpp" />
+    <ClCompile Include="Ground-transport.cpp" />
     <ClCompile Include="Magic-carpet.cpp" />
     <ClCompile Include="Racing.cpp" />
+    <ClCompile Include="Transport.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Air-transport.h" />
     <ClInclude Include="All-terrain-boots.h" />
     <ClInclude Include="Broomstick.h" />
     <ClInclude Include="Camel-fast.h" />
     <ClInclude Include="Camel.h" />
     <ClInclude Include="Centaur.h" />
     <ClInclude Include="Eagle.h" />
+    <ClInclude Include="Ground-transport.h" />
     <ClInclude Include="Magic-carpet.h" />
     <ClInclude Include="Racing.h" />
+    <ClInclude Include="Transport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

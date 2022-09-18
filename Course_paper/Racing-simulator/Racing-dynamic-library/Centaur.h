@@ -1,8 +1,8 @@
 #pragma once
-#include "Camel.h"
+#include "Ground-transport.h"
 
-class Centaur : public Camel
+class Centaur : public Ground_transport
 {
 public:
-	Centaur(int type, int speed, int driving_time, int duration, std::string nameTV);
+	Centaur(int speed, int dtbr, int duration, std::string name_transport);
 };

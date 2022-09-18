@@ -1,3 +1,4 @@
 #include "All-terrain-boots.h"
 
-Boots::Boots(int type, int speed, int driving_time, int duration, std::string nameTV) : Camel(type, speed, driving_time, duration, nameTV){}
+Boots::Boots(int speed, int dtbr, int duration, std::string name_transport)
+	: Ground_transport(speed, dtbr, duration, name_transport) {}

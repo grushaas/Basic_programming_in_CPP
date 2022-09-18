@@ -1,16 +1,9 @@
 #pragma once
+#include "Ground-transport.h"
 #include <string>
 
-class Camel
+class Camel : public Ground_transport
 {
-protected:
-	int type;
-	int speed;
-	int driving_time;
-	int duration;
-	std::string nameTV;
-
-
 public:
-	Camel(int type, int speed, int driving_time, int duration, std::string nameTV);
+	Camel(int speed, int dtbr, int duration, std::string name_transport);
 };

@@ -13,63 +13,99 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\Vehicle">
+    <Filter Include="Файлы заголовков\Transport">
+      <UniqueIdentifier>{52f8f94b-ee12-497a-bc9d-42d265b296f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Transport\Vehicle">
+      <UniqueIdentifier>{a1395880-3e48-4b05-afe0-6686765ebef9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Transport">
+      <UniqueIdentifier>{7fcdc978-2a1f-4afe-b50a-73dcc85e3655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Transport\Vehicle">
       <UniqueIdentifier>{9bc73b69-a514-4729-9ff8-73142c9289e9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Vehicle">
-      <UniqueIdentifier>{a1395880-3e48-4b05-afe0-6686765ebef9}</UniqueIdentifier>
+    <Filter Include="Файлы заголовков\Transport\Vehicle\Air">
+      <UniqueIdentifier>{58464818-1737-4c0e-8066-5c736aa3ea0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Transport\Vehicle\Ground">
+      <UniqueIdentifier>{6d6e1a7f-ee65-4ca4-b28f-44e20dfbf859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Transport\Vehicle\Air">
+      <UniqueIdentifier>{81ad5245-81be-4b7a-965b-82989be0f1f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Transport\Vehicle\Ground">
+      <UniqueIdentifier>{20878c3e-1fa5-4725-99e7-e2c099d6d8e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="All-terrain-boots.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Broomstick.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Camel.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Camel-fast.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Centaur.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Eagle.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
-    <ClCompile Include="Magic-carpet.cpp">
-      <Filter>Исходные файлы\Vehicle</Filter>
-    </ClCompile>
     <ClCompile Include="Racing.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Transport.cpp">
+      <Filter>Исходные файлы\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Air-transport.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Air</Filter>
+    </ClCompile>
+    <ClCompile Include="Broomstick.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Air</Filter>
+    </ClCompile>
+    <ClCompile Include="Eagle.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Air</Filter>
+    </ClCompile>
+    <ClCompile Include="Magic-carpet.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Air</Filter>
+    </ClCompile>
+    <ClCompile Include="All-terrain-boots.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="Camel.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="Camel-fast.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="Centaur.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Ground</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground-transport.cpp">
+      <Filter>Исходные файлы\Transport\Vehicle\Ground</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="All-terrain-boots.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Broomstick.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Camel.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Camel-fast.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Centaur.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Eagle.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
-    <ClInclude Include="Magic-carpet.h">
-      <Filter>Файлы заголовков\Vehicle</Filter>
-    </ClInclude>
     <ClInclude Include="Racing.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Transport.h">
+      <Filter>Файлы заголовков\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Air-transport.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Air</Filter>
+    </ClInclude>
+    <ClInclude Include="Broomstick.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Air</Filter>
+    </ClInclude>
+    <ClInclude Include="Eagle.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Air</Filter>
+    </ClInclude>
+    <ClInclude Include="All-terrain-boots.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="Camel.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="Camel-fast.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="Centaur.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground-transport.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Ground</Filter>
+    </ClInclude>
+    <ClInclude Include="Magic-carpet.h">
+      <Filter>Файлы заголовков\Transport\Vehicle\Air</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

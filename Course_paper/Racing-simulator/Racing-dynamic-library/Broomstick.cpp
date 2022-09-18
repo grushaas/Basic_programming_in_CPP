@@ -1,3 +1,4 @@
 #include "Broomstick.h"
 
-Broomstick::Broomstick(int type, int speed, std::string nameTV) : Magic_carpet(type, speed, nameTV){}
+Broomstick::Broomstick(int speed, std::string name_transport)
+	: Air_transport(speed, name_transport) {}
