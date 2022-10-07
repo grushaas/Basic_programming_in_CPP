@@ -3,5 +3,7 @@
 
 int main()
 {
-	Racing::Beginning();
+	Racing racing;
+	racing.Beginning();
+	
 }

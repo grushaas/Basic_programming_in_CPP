@@ -108,4 +108,7 @@
       <Filter>Файлы заголовков\Transport\Vehicle\Air</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
 </Project>

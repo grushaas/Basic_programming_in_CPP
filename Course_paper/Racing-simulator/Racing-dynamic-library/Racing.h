@@ -5,7 +5,7 @@
 #define RACINGDYNAMICLIBRARY_API __declspec(dllimport)
 #endif // RACINGDYNAMICLIBRARY_EXPORTS
 
-
+#include "Transport.h"
 #include "Ground-transport.h"
 #include "Air-transport.h"
 #include "Camel.h"
@@ -19,18 +19,19 @@
 #include <iostream>
 #include <vector>
 
-class Racing
+class Racing : public Ground_transport, Air_transport
 {
 private:
-	static std::vector<Ground_transport> Ground;
-	static std::vector<Air_transport> Air;
+	std::vector<Ground_transport> Ground;
+	std::vector<Air_transport> Air;
 
-	static int type_race;
-	static int distance;
+	int type_race;
+	int distance;
 
 public:
-	RACINGDYNAMICLIBRARY_API static void Transport_registration();
-	RACINGDYNAMICLIBRARY_API static void Beginning();
-	RACINGDYNAMICLIBRARY_API static void Ending();
-	RACINGDYNAMICLIBRARY_API static void Race_results();
+	Racing();
+	RACINGDYNAMICLIBRARY_API void Transport_registration();
+	RACINGDYNAMICLIBRARY_API void Beginning();
+	RACINGDYNAMICLIBRARY_API void Ending();
+	RACINGDYNAMICLIBRARY_API void Race_results();
 };

@@ -1,8 +1,10 @@
 #include "Racing.h"
+#include <iostream>
+#include <string>
 
 void Racing::Beginning()
 {
-	int value;
+	int value = 1;
 	std::cout << "Welcome to the racing simulator!" << std::endl;
 	std::cout << "1. Race for ground transport" << std::endl;
 	std::cout << "2. Race for air transport" << std::endl;
@@ -33,7 +35,7 @@ void Racing::Beginning()
 
 void Racing::Transport_registration()
 {
-	int value;
+	int value = 1;
 
 	if (type_race == 1)
 	{
@@ -46,21 +48,22 @@ void Racing::Transport_registration()
 			// Список зарегестрированных траспортных средств
 			if (Ground.empty())
 			{
-				continue;
+				std::cout << "Registered vehicles: empty" << std::endl;
 			}
 			else
 			{
 				if (Ground.size() == 1)
 				{
 					std::cout << "Registered vehicles: ";
-					auto const test = Ground[0];
+					auto const test = Ground[0].name_transport;
+					std::cout << test << std::endl;
 				}
 				else
 				{
 					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Ground)
+					for (int i = Ground.size(); i > 0; --i)
 					{
-						//std::cout << ", " << elem;
+						std::cout << ", " << Ground[i].name_transport;
 					}
 				}
 			}
@@ -70,6 +73,7 @@ void Racing::Transport_registration()
 			std::cout << "2. Camel" << std::endl;
 			std::cout << "3. Centaur" << std::endl;
 			std::cout << "4. Camel-fast" << std::endl;
+			std::cout << "0. Exit from transport registration" << std::endl;
 			std::cout << "Select transport or 0 to end the registration process: ";
 			std::cin >> value;
 			switch (value)
@@ -79,15 +83,19 @@ void Racing::Transport_registration()
 			case 1:
 				Ground.push_back(Boots(6, 60, 10, "Boots"));
 				std::cout << "Boots successfully registered!" << std::endl;
+				break;
 			case 2:
 				Ground.push_back(Camel(10, 30, 5, "Camel"));
 				std::cout << "Camel successfully registered!" << std::endl;
+				break;
 			case 3:
 				Ground.push_back(Centaur(15, 8, 2, "Centaur"));
 				std::cout << "Centaur successfully registered!" << std::endl;
+				break;
 			case 4:
 				Ground.push_back(Camel_fast(40, 10, 5, "Camel fast"));
 				std::cout << "Camel-fast successfully registered!" << std::endl;
+				break;
 			default:
 				break;
 			}
@@ -105,7 +113,7 @@ void Racing::Transport_registration()
 			// Список зарегестрированных траспортных средств
 			if (Air.empty())
 			{
-				continue;
+				std::cout << "Registered vehicles: empty" << std::endl;
 			}
 			else
 			{
@@ -130,6 +138,7 @@ void Racing::Transport_registration()
 			std::cout << "1. Broomstick" << std::endl;
 			std::cout << "2. Eagle" << std::endl;
 			std::cout << "3. Magic-carpet" << std::endl;
+			std::cout << "0. Exit from transport registration" << std::endl;
 			std::cout << "Select transport or 0 to end the registration process: ";
 			std::cin >> value;
 			switch (value)
@@ -139,12 +148,15 @@ void Racing::Transport_registration()
 			case 1:
 				Air.push_back(Broomstick(20, "Broomstick"));
 				std::cout << "Broomstick successfully registered!" << std::endl;
+				break;
 			case 2:
 				Air.push_back(Eagle(8, "Eagle"));
 				std::cout << "Eagle successfully registered!" << std::endl;
+				break;
 			case 3:
 				Air.push_back(Magic_carpet(10, "Magic carpet"));
 				std::cout << "Magic_carpet successfully registered!" << std::endl;
+				break;
 			default:
 				break;
 			}
@@ -163,7 +175,7 @@ void Racing::Transport_registration()
 			//TODO: Переписать проверку на уже зарегестрированных транспортных средств
 			if (Air.empty())
 			{
-				continue;
+				std::cout << "Registered vehicles: empty" << std::endl;
 			}
 			else
 			{
@@ -216,6 +228,7 @@ void Racing::Transport_registration()
 			std::cout << "5. Eagle" << std::endl;
 			std::cout << "6. Camel-fast" << std::endl;
 			std::cout << "7. Magic-carpet" << std::endl;
+			std::cout << "0. Exit from transport registration" << std::endl;
 			std::cout << "Select transport or 0 to end the registration process: ";
 			std::cin >> value;
 			switch (value)
@@ -225,24 +238,31 @@ void Racing::Transport_registration()
 			case 1:
 				Ground.push_back(Boots(6, 60, 10, "Boots"));
 				std::cout << "Boots successfully registered!" << std::endl;
+				break;
 			case 2:
 				Air.push_back(Broomstick(20, "Broomstick"));
 				std::cout << "Broomstick successfully registered!" << std::endl;
+				break;
 			case 3:
 				Ground.push_back(Camel(10, 30, 5, "Camel"));
 				std::cout << "Camel successfully registered!" << std::endl;
+				break;
 			case 4:
 				Ground.push_back(Centaur(15, 8, 2, "Centaur"));
+				break;
 				std::cout << "Centaur successfully registered!" << std::endl;
 			case 5:
 				Air.push_back(Eagle(8, "Eagle"));
 				std::cout << "Eagle successfully registered!" << std::endl;
+				break;
 			case 6:
 				Ground.push_back(Camel_fast(40, 10, 5, "Camel fast"));
 				std::cout << "Camel-fast successfully registered!" << std::endl;
+				break;
 			case 7:
 				Air.push_back(Magic_carpet(10, "Magic carpet"));
 				std::cout << "Magic_carpet successfully registered!" << std::endl;
+				break;
 			default:
 				break;
 			}
