@@ -19,7 +19,7 @@
 #include <iostream>
 #include <vector>
 
-class Racing : public Ground_transport, Air_transport
+class Racing
 {
 private:
 	std::vector<Ground_transport> Ground;
@@ -29,7 +29,6 @@ private:
 	int distance;
 
 public:
-	Racing();
 	RACINGDYNAMICLIBRARY_API void Transport_registration();
 	RACINGDYNAMICLIBRARY_API void Beginning();
 	RACINGDYNAMICLIBRARY_API void Ending();

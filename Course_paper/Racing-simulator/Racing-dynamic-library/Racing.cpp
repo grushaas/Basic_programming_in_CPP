@@ -1,6 +1,7 @@
 #include "Racing.h"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 void Racing::Beginning()
 {
@@ -14,6 +15,8 @@ void Racing::Beginning()
 
 	std::cout << "Specify the distance length (Must be positive): ";
 	std::cin >> distance;
+
+	system("cls");
 
 	std::cout << "At least 2 vehicles must be registered" << std::endl;
 	std::cout << "1. Register a transport" << std::endl;
@@ -41,6 +44,7 @@ void Racing::Transport_registration()
 	{
 		do
 		{
+			system("cls");
 			//TODO: оптимизировать список транспортов, которые печатаются в консоль
 			std::cout << "Race for ground transport. ";
 			std::cout << "Distance: " << distance << std::endl;
@@ -55,15 +59,20 @@ void Racing::Transport_registration()
 				if (Ground.size() == 1)
 				{
 					std::cout << "Registered vehicles: ";
-					auto const test = Ground[0].name_transport;
-					std::cout << test << std::endl;
+					auto const transport = Ground[0].name_transport;
+					std::cout << transport;
 				}
 				else
 				{
+					// TODO: Исправить вывод зарегистрированного транспорта.
+					// Ошибка повторяется и на других типах гонок.
+					// Ошибка: Последний выводящийся транспорт пишется с запятой. 
+					// Пример ошибки: transport1, transport2, transport3, .
 					std::cout << "Registered vehicles: ";
-					for (int i = Ground.size(); i > 0; --i)
+					for (int i = 0; i < Ground.size(); ++i)
 					{
-						std::cout << ", " << Ground[i].name_transport;
+						auto transport = Ground[i].name_transport;
+						std::cout << transport << ", ";
 					}
 				}
 			}
@@ -106,6 +115,7 @@ void Racing::Transport_registration()
 	{
 		do
 		{
+			system("cls");
 			//TODO: оптимизировать список транспортов, которые печатаются в консоль
 			std::cout << "Race for air transport" << std::endl;
 			std::cout << "Distance: " << distance << std::endl;
@@ -120,21 +130,22 @@ void Racing::Transport_registration()
 				if (Air.size() == 1)
 				{
 					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Air)
-					{
-						//std::cout << elem;
-					}
+					auto const transport = Air[0].name_transport;
+					std::cout << transport;
+					
 				}
 				else
 				{
 					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Air)
+					for (int i = 0; i < Air.size(); ++i)
 					{
-						//std::cout << ", " << elem;
+						auto transport = Air[i].name_transport;
+						std::cout << transport << ", ";
 					}
 				}
 			}
 
+			std::cout << std::endl;
 			std::cout << "1. Broomstick" << std::endl;
 			std::cout << "2. Eagle" << std::endl;
 			std::cout << "3. Magic-carpet" << std::endl;
@@ -167,60 +178,52 @@ void Racing::Transport_registration()
 	{
 		do
 		{
+			int transport = 0;
+
+			system("cls");
 			//TODO: оптимизировать список транспортов, которые печатаются в консоль
 			std::cout << "Race for ground and air transport" << std::endl;
 			std::cout << "Distance: " << distance << std::endl;
 
 			// Список зарегестрированных траспортных средств
-			//TODO: Переписать проверку на уже зарегестрированных транспортных средств
-			if (Air.empty())
+			// TODO: Слегка доработать
+			if (Air.empty() && Ground.empty())
 			{
 				std::cout << "Registered vehicles: empty" << std::endl;
 			}
 			else
 			{
+				std::cout << "Registered vehicles: ";
 				if (Air.size() == 1)
 				{
-					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Air)
-					{
-						//std::cout << elem;
-					}
+					auto const transport = Air[0].name_transport;
+					std::cout << transport;
 				}
-				else
+				else if(Air.size() > 1)
 				{
-					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Air)
+					for (int i = 0; i < Air.size(); ++i)
 					{
-						//std::cout << ", " << elem;
+						auto transport = Air[i].name_transport;
+						std::cout << transport << ", ";
 					}
 				}
-			}
-			//-------------------------
-			if (Ground.empty())
-			{
-				continue;
-			}
-			else
-			{
+
 				if (Ground.size() == 1)
 				{
-					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Ground)
-					{
-						//std::cout << elem;
-					}
+					auto const transport = Ground[0].name_transport;
+					std::cout << transport;
 				}
-				else
+				else if(Ground.size() > 1)
 				{
-					std::cout << "Registered vehicles: ";
-					for (const auto& elem : Ground)
+					for (int i = 0; i < Ground.size(); ++i)
 					{
-						//std::cout << ", " << elem;
+						auto transport = Ground[i].name_transport;
+						std::cout << transport << ", ";
 					}
 				}
 			}
 
+			std::cout << std::endl;
 			std::cout << "1. Boots" << std::endl;
 			std::cout << "2. Broomstick" << std::endl;
 			std::cout << "3. Camel" << std::endl;
@@ -269,11 +272,23 @@ void Racing::Transport_registration()
 
 		} while (value != 0);
 	}
-	else
+	
+	int choise = 0;
+	system("cls");
+	std::cout << "1. Register transport" << std::endl;
+	std::cout << "2. Start the race" << std::endl;
+	std::cout << "Select an action: ";
+	std::cin >> choise;
+	switch (choise)
 	{
-		std::cout << "Error";
-	}
 
+	case 1:
+		Transport_registration();
+	case 2:
+		Ending();
+	default:
+		break;
+	}
 }
 
 void Racing::Ending()
@@ -282,7 +297,45 @@ void Racing::Ending()
 	{
 		for (int i = 0; i < Ground.size(); ++i)
 		{
-			
+			int result_racing = 0;
+
+			auto tv = Ground[i];
+
+			result_racing = distance / tv.speed;
+			if (tv.name_transport == "Camel")
+			{
+				int rest_counter = result_racing / tv.dtbr;
+				while (rest_counter != 0)
+				{
+					if (rest_counter == rest_counter)
+					{
+						result_racing += tv.duration;
+						--rest_counter;
+					}
+					else
+					{
+						result_racing += (tv.duration + 3);
+						--rest_counter;
+					}
+				}
+			}
+			else if (tv.name_transport == "Camel fast")
+			{
+				int rest_counter = result_racing / tv.dtbr;
+				int tmp = rest_counter;
+				while (rest_counter != 0)
+				{
+					if (rest_counter == tmp)
+					{
+						result_racing += tv.duration;
+						--tmp;
+					}
+					else if ((rest_counter - 1) == tmp)
+					{
+						// Не доделано
+					}
+				}
+			}
 		}
 	}
 	else if (type_race == 2)
