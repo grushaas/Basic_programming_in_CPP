@@ -19,11 +19,20 @@
 #include <iostream>
 #include <vector>
 
-class Racing
+class Racing : public Transport
 {
 private:
-	std::vector<Ground_transport> Ground;
-	std::vector<Air_transport> Air;
+	std::vector<std::shared_ptr<Transport>> vehicles = {
+		std::make_shared<Boots>(6, 60, 10, "Boots"),
+		std::make_shared<Camel>(10, 30, 5, "Camel"),
+		std::make_shared<Camel_fast>(40, 10, 5, "Camel-fast"),
+		std::make_shared<Centaur>(15, 8, 2, "Centaur"),
+		std::make_shared<Eagle>(8, "Eagle"),
+		std::make_shared<Broomstick>(20, "Broomstick"),
+		std::make_shared<Magic_carpet>(10, "Magic-carpet"),
+	};
+
+	std::vector<Transport> regTransport;
 
 	int type_race;
 	int distance;
