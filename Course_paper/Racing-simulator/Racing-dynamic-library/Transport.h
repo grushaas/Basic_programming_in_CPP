@@ -11,10 +11,10 @@ protected:
 	int time_race = 0; // —колько времени понадобилось на то чтобы завершить гонку
 	std::string name_transport; // Ќазвание транспорта
 
-	std::string name() const;
-
 	Transport(std::string type, int speed, int dtbr, int duration, std::string name_transport);
 
 public:
 	virtual ~Transport() = default;
+
+	std::string name() const;
 };

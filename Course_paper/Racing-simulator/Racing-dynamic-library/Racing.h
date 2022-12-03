@@ -19,7 +19,7 @@
 #include <iostream>
 #include <vector>
 
-class Racing : public Transport
+class Racing
 {
 private:
 	std::vector<std::shared_ptr<Transport>> vehicles = {
