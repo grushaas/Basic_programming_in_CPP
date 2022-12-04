@@ -32,14 +32,15 @@ private:
 		std::make_shared<Magic_carpet>(10, "Magic-carpet"),
 	};
 
-	std::vector<Transport> regTransport;
+	std::vector<std::shared_ptr<Transport>> regTransport;
 
 	int type_race;
 	int distance;
 
+	void OutputRegisteredTransport();
+	void OutputTransport(bool isAirVehicle);
 public:
-	RACINGDYNAMICLIBRARY_API void Transport_registration();
+	void Transport_registration();
 	RACINGDYNAMICLIBRARY_API void Beginning();
-	RACINGDYNAMICLIBRARY_API void Ending();
-	RACINGDYNAMICLIBRARY_API void Race_results();
+	void Race_results();
 };

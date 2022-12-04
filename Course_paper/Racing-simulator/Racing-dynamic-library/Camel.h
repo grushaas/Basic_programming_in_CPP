@@ -5,5 +5,5 @@
 class Camel : public Ground_transport
 {
 public:
-	Camel(int speed, int dtbr, int duration, std::string name_transport);
+	RACINGDYNAMICLIBRARY_API Camel(int speed, int dtbr, int duration, std::string name_transport);
 };

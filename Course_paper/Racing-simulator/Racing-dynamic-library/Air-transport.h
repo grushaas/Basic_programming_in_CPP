@@ -4,5 +4,5 @@
 class Air_transport : public Transport
 {
 protected:
-	Air_transport(int speed, std::string name_transport);
+	RACINGDYNAMICLIBRARY_API Air_transport(int speed, std::string name_transport);
 };

@@ -4,5 +4,5 @@
 class Eagle : public Air_transport
 {
 public:
-	Eagle(int speed, std::string name_transport);
+	RACINGDYNAMICLIBRARY_API Eagle(int speed, std::string name_transport);
 };

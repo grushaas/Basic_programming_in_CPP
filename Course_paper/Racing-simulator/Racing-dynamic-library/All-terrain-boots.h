@@ -4,5 +4,5 @@
 class Boots : public Ground_transport
 {
 public:
-	Boots(int speed, int dtbr, int duration, std::string name_transport);
+	RACINGDYNAMICLIBRARY_API Boots(int speed, int dtbr, int duration, std::string name_transport);
 };
